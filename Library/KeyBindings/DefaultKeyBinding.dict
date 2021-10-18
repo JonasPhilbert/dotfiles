@@ -1,0 +1,8 @@
+/*
+~/Library/KeyBindings/DefaultKeyBinding.dict
+*/
+
+{
+"~ " = ("insertText:", " ");
+}
+

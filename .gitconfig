@@ -1,0 +1,9 @@
+[user]
+	name = JonasPhilbert
+	email = jonas@priestyard.dk
+[pull]
+	rebase = true
+[core]
+	editor = nvim
+[push]
+	default = current # Allows `git push -u` to push and automatically set upstream to origin/HEAD
