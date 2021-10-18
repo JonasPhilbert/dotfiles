@@ -101,7 +101,7 @@ call plug#begin('~/.vim/plugged')
   " Change surrounding delimiter with cs<d><d> (eg. cs"{ )
   Plug 'tpope/vim-surround'
 
-  " Git client using :G <command> (eg. :G rebase -I )
+  " Git client using :G <command> (eg. :G rebase -i )
   Plug 'tpope/vim-fugitive'
     nnoremap <leader>g :G<space>
 
