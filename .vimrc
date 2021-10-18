@@ -79,14 +79,6 @@ vnoremap <leader>f y/<c-r>0
 " File explorer mapping
 nnoremap <silent><leader>A :Explore<CR>
 
-" Upload current file to GitHub Gist
-command Gist execute("!gist -u '0fd53835801f8e966b64fdd0d4d9359a' %")
-
-" Convenient edit and save (+upload) .vimrc
-command Rc if bufname('%') =~# '\.vimrc' | source % | execute("Gist") |
-      \ else | edit ~/.vimrc |
-      \ endif
-
 " Plugin manager
 call plug#begin('~/.vim/plugged')
   " Fuzzy file finder
