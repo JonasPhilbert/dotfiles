@@ -116,10 +116,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'mbbill/undotree' " Undo steps manager.
     nnoremap <silent><leader>U :UndotreeToggle<CR>:UndotreeFocus<CR>
 
-  " Status line
-  " Plug 'vim-airline/vim-airline' " Horrible for performance
-  " Plug 'itchyny/lightline.vim'
-
   " Automatically close blocks with end, endif, etc.
   Plug 'tpope/vim-endwise'
 
