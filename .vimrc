@@ -130,7 +130,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'stsewd/fzf-checkout.vim'
     nnoremap <leader>B :GBranches!<CR>
 
-  " Color highlights in code
+  " Hex color highlights in code
   Plug 'lilydjwg/colorizer'
 
   " Language support
@@ -169,13 +169,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
-" Coc - Use <c-space> to trigger completion
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
 
 " Hardmode >:D
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
