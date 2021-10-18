@@ -60,6 +60,9 @@ autocmd BufEnter * :syntax sync fromstart
 " Clear syntax when leave buffer for performance
 autocmd BufLeave * :syntax sync clear
 
+" Easier end of line motion for win keyboard
+nnoremap ½ $
+
 " Switch to last used buffer using enter
 nnoremap <silent><CR> :e #<CR>
 
@@ -95,7 +98,7 @@ call plug#begin('~/.vim/plugged')
   " Code completion (vscode-esc) using language server
   Plug 'neoclide/coc.nvim' , { 'branch' : 'release'  }
     " Language server implementations
-    let g:coc_global_extensions = [ 'coc-tsserver', 'coc-solargraph', 'coc-eslint', 'coc-graphql', 'coc-styled-components' ]
+    let g:coc_global_extensions = [ 'coc-tsserver', 'coc-solargraph', 'coc-eslint', 'coc-graphql', 'coc-styled-components', 'coc-go' ]
     Plug 'neoclide/coc-eslint'
 
   " Change surrounding delimiter with cs<d><d> (eg. cs"{ )
@@ -136,6 +139,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'leafgarland/typescript-vim' " Syntax highlighting, indentation
   Plug 'maxmellon/vim-jsx-pretty' " Syntax highlighting, indentation
   Plug 'jparise/vim-graphql' " Syntax highlighting, indentation
+  " Plug 'fatih/vim-go' " Syntax highlighting, indentation, :GoRun, :GoBuild, :GoInstall, etc.
 call plug#end()
 
 " Coc - Action mappings
