@@ -64,7 +64,7 @@ autocmd BufLeave * :syntax sync clear
 nnoremap ½ $
 
 " Switch to last used buffer using enter
-nnoremap <silent><CR> :e #<CR>
+nnoremap <silent><CR> :b #<CR>
 
 " Window naviagtion
 nnoremap <silent><leader>h :wincmd h<CR>
@@ -81,6 +81,11 @@ vnoremap <leader>f y/<c-r>0
 
 " File explorer mapping
 nnoremap <silent><leader>A :Explore<CR>
+
+" .vimrc command to edit or source
+command Rc if bufname('%') =~# '\.vimrc' | source % |
+      \ else | edit ~/.vimrc |
+      \ endif
 
 " Plugin manager
 call plug#begin('~/.vim/plugged')
@@ -174,5 +179,4 @@ endfunction
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
   exec 'noremap' key '<Nop>'
   exec 'inoremap' key '<Nop>'
-  exec 'cnoremap' key '<Nop>'
 endfor
