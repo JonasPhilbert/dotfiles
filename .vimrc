@@ -31,6 +31,7 @@ set clipboard=unnamedplus " Use system clipboard for yanks
 set cursorline " Highline line of cursor
 set nowrap " Do not wrap overflowing lines to next line
 set regexpengine=1 " Use old regex engine, which can boost performance
+set list " Show irregular whitespace characters (e.g. nbsp) while typing
 
 " Ref: http://vimdoc.sourceforge.net/htmldoc/options.html#'statusline'
 " :help statusline
