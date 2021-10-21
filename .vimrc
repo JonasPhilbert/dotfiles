@@ -62,7 +62,7 @@ autocmd BufEnter * :syntax sync fromstart
 autocmd BufLeave * :syntax sync clear
 
 " Easier end of line motion for win keyboard
-nnoremap ½ $
+noremap ½ $
 
 " Switch to last used buffer using enter
 nnoremap <silent><CR> :b #<CR>
