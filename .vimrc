@@ -84,7 +84,7 @@ vnoremap <leader>f y/<c-r>0
 nnoremap <silent><leader>A :Explore<CR>
 
 " .vimrc command to edit or source
-command Rc if bufname('%') =~# '\.vimrc' | source % |
+command! Rc if bufname('%') =~# '\.vimrc' | source % |
       \ else | edit ~/.vimrc |
       \ endif
 
@@ -105,7 +105,7 @@ call plug#begin('~/.vim/plugged')
   " Code completion (vscode-esc) using language server
   Plug 'neoclide/coc.nvim' , { 'branch' : 'release'  }
     " Language server implementations
-    let g:coc_global_extensions = [ 'coc-tsserver', 'coc-solargraph', 'coc-eslint', 'coc-graphql', 'coc-styled-components', 'coc-go' ]
+    let g:coc_global_extensions = [ 'coc-tsserver', 'coc-solargraph', 'coc-eslint', 'coc-graphql', 'coc-styled-components', 'coc-go', 'coc-svelte' ]
     Plug 'neoclide/coc-eslint'
 
   " Change surrounding delimiter with cs<d><d> (eg. cs"{ )
@@ -146,6 +146,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'leafgarland/typescript-vim' " Syntax highlighting, indentation
   Plug 'maxmellon/vim-jsx-pretty' " Syntax highlighting, indentation
   Plug 'jparise/vim-graphql' " Syntax highlighting, indentation
+  Plug 'evanleck/vim-svelte', {'branch': 'main'}
   " Plug 'fatih/vim-go' " Syntax highlighting, indentation, :GoRun, :GoBuild, :GoInstall, etc.
 call plug#end()
 
