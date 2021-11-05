@@ -1,12 +1,5 @@
-" Resources:
-" ThePrimagean on YouTube
-" https://medium.com/swlh/ultimate-vim-typescript-setup-35b5ac5c8c4e
-" https://jamesnewton.com/blog/setting-up-coc-nvim-for-ruby-development
-
 syntax on
 
-set background=dark " Dark theme 🤘
-set t_Co=256 " Compatability for color scheme colors
 set hidden " Hide buffers that haven't been modified, rather than attempt to close them
 set autoread " Automatically read external file changes
 set backspace=indent,eol,start  " More powerful backspacing
@@ -32,6 +25,7 @@ set cursorline " Highline line of cursor
 set nowrap " Do not wrap overflowing lines to next line
 set regexpengine=1 " Use old regex engine, which can boost performance
 set list listchars=nbsp:€ " Show NBSP characters as euro sign to help identify mishaps
+set termguicolors " Use true colors rather than what $TERM supports
 
 " Ref: http://vimdoc.sourceforge.net/htmldoc/options.html#'statusline'
 " :help statusline
@@ -90,17 +84,26 @@ command! Rc if bufname('%') =~# '\.vimrc' | source % |
 
 " Plugin manager
 call plug#begin('~/.vim/plugged')
+  " Color scheme
+  Plug 'tomasr/molokai'
+
   " Fuzzy file finder
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
   " Vim integration with FZF
-  Plug 'junegunn/fzf.vim'
-    " let $FZF_DEFAULT_COMMAND = 'ag -g ""' " Use ag with -g flag instead of fzf command, as it respects .gitignore
-    nnoremap <silent><leader><space> :Buffers!<CR>
-    nnoremap <silent><leader>f :Files!<CR>
-    nnoremap <silent><leader>F :Ag!<CR>
+  Plug 'junegunn/fzf.vim', { 'do': 'brew install bat' } " fzf.vim uses bat (if exists) for syntax highlighting
+    " If in tmux, open fzf preview as a tmux overlay
+    if exists('$TMUX')
+      let g:fzf_layout = { 'tmux': '-p100%,100%' }
+    else
+      let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
+    endif
+    let g:fzf_layout = { 'tmux': '-p90%,90%' }
+    nnoremap <silent><leader><space> :Buffers<CR>
+    nnoremap <silent><leader>f :Files<CR>
+    nnoremap <silent><leader>F :Ag<CR>
     vnoremap <leader>F y:Ag <c-r>0<CR>
-    command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0) " Use <:Rag 'query' path> to search for ag matches in specific folder.
+    command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0) " Use <:Rag 'query' path> to search for ag matches in specific folder
 
   " Code completion (vscode-esc) using language server
   Plug 'neoclide/coc.nvim' , { 'branch' : 'release'  }
@@ -139,6 +142,9 @@ call plug#begin('~/.vim/plugged')
   " Hex color highlights in code
   Plug 'lilydjwg/colorizer'
 
+  " Enhances netrw. Use - in any buffer to access. Then use I for netrw info
+  Plug 'tpope/vim-vinegar'
+
   " Language support
   Plug 'vim-ruby/vim-ruby' " Syntax highlighting, indentation
   Plug 'tpope/vim-rails' " Syntax highlighting, identation, commands, go to file ( gf )
@@ -150,6 +156,9 @@ call plug#begin('~/.vim/plugged')
   " Plug 'fatih/vim-go' " Syntax highlighting, indentation, :GoRun, :GoBuild, :GoInstall, etc.
 call plug#end()
 
+" Color scheme
+color molokai
+
 " Coc - Action mappings
 nmap <leader>ac  <Plug>(coc-codeaction)
 xmap <leader>ac  <Plug>(coc-codeaction-selected)
@@ -160,9 +169,6 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
-
-" Coc - TypeScript compilation command
-command! -nargs=0 Tsc :call CocAction('runCommand', 'tsserver.watchBuild') | copen
 
 " Coc - Use K to show documentation under cursor
 nnoremap <silent> K :call CocAction('doHover')<CR>
