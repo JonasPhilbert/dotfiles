@@ -95,7 +95,7 @@ call plug#begin('~/.vim/plugged')
 
   " Vim integration with FZF
   Plug 'junegunn/fzf.vim'
-    let $FZF_DEFAULT_COMMAND = 'ag -g ""' " Use ag with -g flag instead of fzf command, as it respects .gitignore
+    " let $FZF_DEFAULT_COMMAND = 'ag -g ""' " Use ag with -g flag instead of fzf command, as it respects .gitignore
     nnoremap <silent><leader><space> :Buffers!<CR>
     nnoremap <silent><leader>f :Files!<CR>
     nnoremap <silent><leader>F :Ag!<CR>
