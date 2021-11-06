@@ -160,7 +160,7 @@ call plug#end()
 color molokai
 
 " Coc - Action mappings
-nmap <leader>ac  <Plug>(coc-codeaction)
+nmap <leader>ac  :CocAction<CR>
 xmap <leader>ac  <Plug>(coc-codeaction-selected)
 nmap <leader>ar <Plug>(coc-rename)
 nmap <leader>af <Plug>(coc-format)
