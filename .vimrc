@@ -92,13 +92,13 @@ call plug#begin('~/.vim/plugged')
 
   " Vim integration with FZF
   Plug 'junegunn/fzf.vim', { 'do': 'brew install bat' } " fzf.vim uses bat (if exists) for syntax highlighting
+    let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
     " If in tmux, open fzf preview as a tmux overlay
-    if exists('$TMUX')
-      let g:fzf_layout = { 'tmux': '-p100%,100%' }
-    else
-      let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
-    endif
-    let g:fzf_layout = { 'tmux': '-p90%,90%' }
+    " if exists('$TMUX')
+    "   let g:fzf_layout = { 'tmux': '-p90%,90%' }
+    " else
+    "   let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
+    " endif
     nnoremap <silent><leader><space> :Buffers<CR>
     nnoremap <silent><leader>f :Files<CR>
     nnoremap <silent><leader>F :Ag<CR>
