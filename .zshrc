@@ -1,8 +1,5 @@
 # Difference between single and double square brackets in if-statements: http://mywiki.wooledge.org/BashFAQ/031
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -26,6 +23,11 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 source $ZSH/oh-my-zsh.sh
 
 # User Configuration
+
+# Linuxbrew shell-env if on Linux.
+if  [[ -x "$(command -v /home/linuxbrew/.linuxbrew/bin/brew)" ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 # Added by Homebrew.
 if [[ -x "$(command -v rbenv)" ]]; then
