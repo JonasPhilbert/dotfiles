@@ -50,6 +50,7 @@ fi
 alias tmuxdev="tmux split-window -h && tmux split-window && tmux resize-pane -R 30 && tmux select-pane -L"
 alias tmuxops="tmux split-window -h && tmux split-window && tmux select-pane -L"
 alias islands="cd ~/git/islands"
+alias servers="lsof -iTCP -sTCP:LISTEN -n -P"
 
 # Aliases - Work
 alias fl="cd ~/git/flightlogger"
