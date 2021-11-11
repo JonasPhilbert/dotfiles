@@ -94,7 +94,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim', { 'do': 'brew install bat' } " fzf.vim uses bat (if exists) for syntax highlighting
     let g:fzf_layout = { 'window': { 'width': 1, 'height': 1 } }
     nnoremap <silent><leader><space> :Buffers<CR>
-    nnoremap <silent><leader>f :Files<CR>
+    nnoremap <silent><leader>f :GFiles<CR>
     nnoremap <silent><leader>F :Ag<CR>
     vnoremap <leader>F y:Ag <c-r>0<CR>
     command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0) " Use <:Rag 'query' path> to search for ag matches in specific folder
@@ -154,6 +154,7 @@ call plug#end()
 color molokai
 
 " Coc - Action mappings
+nmap <leader>aa  :CocCommand<CR>
 nmap <leader>ac  :CocAction<CR>
 xmap <leader>ac  <Plug>(coc-codeaction-selected)
 nmap <leader>ar <Plug>(coc-rename)
