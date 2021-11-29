@@ -49,6 +49,7 @@ set statusline+=\
 packadd cfilter " Activate the cfilter plugin, see :h cfilter
 
 let g:mapleader = "\<space>" " Leader key is space
+let g:netrw_fastbrowse = 0 " Wipe/delete netrw buffers when exiting it
 
 " Syntax highlight from beginning of active buffer for best results
 autocmd BufEnter * :syntax sync fromstart
@@ -59,7 +60,7 @@ autocmd BufLeave * :syntax sync clear
 noremap ½ $
 
 " Switch to last used buffer using enter
-nnoremap <silent><CR> :b #<CR>
+nnoremap <silent><CR> <C-^><CR>
 
 " Window naviagtion
 nnoremap <silent><leader>h :wincmd h<CR>
