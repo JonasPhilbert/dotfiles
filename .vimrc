@@ -59,8 +59,8 @@ autocmd BufLeave * :syntax sync clear
 " Easier end of line motion for win keyboard
 noremap ½ $
 
-" Switch to last used buffer using enter
-nnoremap <silent><CR> <C-^><CR>
+" Switch to last used buffer using backspace
+nnoremap <silent><BS> <C-^><CR>
 
 " Window naviagtion
 nnoremap <silent><leader>h :wincmd h<CR>
@@ -140,6 +140,9 @@ call plug#begin('~/.vim/plugged')
   " Enhances netrw. Use - in any buffer to access. Then use I for netrw info
   Plug 'tpope/vim-vinegar'
 
+  " I18n tooling
+  Plug 'airblade/vim-localorie'
+
   " Language support
   Plug 'vim-ruby/vim-ruby' " Syntax highlighting, indentation
   Plug 'tpope/vim-rails' " Syntax highlighting, identation, commands, go to file ( gf )
@@ -165,6 +168,9 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" localorie
+nnoremap <silent> <leader>gt :call localorie#translate()<CR>
 
 " Coc - Use K to show documentation under cursor
 nnoremap <silent> K :call CocAction('doHover')<CR>
