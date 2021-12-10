@@ -134,8 +134,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'stsewd/fzf-checkout.vim'
     nnoremap <leader>B :GBranches!<CR>
 
-  " Hex color highlights in code
+  " Hex color highlights in code.
   Plug 'lilydjwg/colorizer'
+    let g:colorizer_maxlines = 1000 " Important for performance. Really slow in large buffers, so limit to 1k lines.
 
   " Enhances netrw. Use - in any buffer to access. Then use I for netrw info
   Plug 'tpope/vim-vinegar'
@@ -170,7 +171,8 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " localorie
-nnoremap <silent> <leader>gt :call localorie#translate()<CR>
+nnoremap <silent> <leader>lt :call localorie#translate()<CR>
+nnoremap <silent> <leader>le :echo localorie#expand_key()<CR>
 
 " Coc - Use K to show documentation under cursor
 nnoremap <silent> K :call CocAction('doHover')<CR>
