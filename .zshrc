@@ -29,6 +29,11 @@ if  [[ -x "$(command -v /home/linuxbrew/.linuxbrew/bin/brew)" ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
 
+# Homebrew shell-env if on MacOS.
+if [[ -x "$(command -v /opt/homebrew/bin/brew)" ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # Added by Homebrew.
 if [[ -x "$(command -v rbenv)" ]]; then
   eval "$(rbenv init - --no-rehash)"
