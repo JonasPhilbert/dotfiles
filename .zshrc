@@ -34,12 +34,17 @@ if [[ -x "$(command -v /opt/homebrew/bin/brew)" ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
 
-# Added by Homebrew.
+# Recommended by Homebrew.
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Recommended by Homebrew.
 if [[ -x "$(command -v rbenv)" ]]; then
   eval "$(rbenv init - --no-rehash)"
 fi
 
-# Added by Homebrew.
+# Recommended by Homebrew.
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -64,6 +69,5 @@ alias workoff="bin/rake jobs:workoff"
 alias workclear="bin/rake jobs:clear"
 alias by="bundle install & yarn"
 alias bym="by & bin/rails db:migrate RAILS_ENV=development"
-alias rubofix="~/scripts/rubofix"
 alias tsc="node_modules/typescript/bin/tsc"
 alias cloudman="foreman start -c worker_cloudsync=3"

@@ -144,6 +144,9 @@ call plug#begin('~/.vim/plugged')
   " I18n tooling.
   Plug 'airblade/vim-localorie'
 
+  " Paranthesis autocomplete and other goodies.
+  Plug 'tmsvg/pear-tree'
+
   " Language support.
   Plug 'vim-ruby/vim-ruby' " Syntax highlighting, indentation.
   Plug 'tpope/vim-rails' " Syntax highlighting, identation, commands, go to file ( gf )
