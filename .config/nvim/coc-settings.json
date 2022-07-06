@@ -1,5 +1,6 @@
 {
   "solargraph.diagnostics": true,
+  "solargraph.useBundler": true,
   "tsserver.autoClosingTags": true,
   "typescript.preferences.importModuleSpecifier": "relative",
   "typescript.format.enabled": true,
