@@ -180,6 +180,17 @@ nnoremap <silent> <leader>le :echo localorie#expand_key()<CR>
 " Coc - Use K to show documentation under cursor.
 nnoremap <silent> K :call CocAction('doHover')<CR>
 
+" Coc - Use TAB to trigger completion.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Hardmode >:D
 for key in ['<Up>', '<Down>', '<Left>', '<Right>']
   exec 'noremap' key '<Nop>'
