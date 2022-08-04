@@ -50,6 +50,7 @@ packadd cfilter " Activate the cfilter plugin, see :h cfilter
 
 let g:mapleader = "\<space>" " Leader key is space.
 let g:netrw_fastbrowse = 0 " Wipe/delete netrw buffers when exiting it.
+let g:netrw_liststyle = 3 " Display tree structure in netrw.
 
 " Syntax highlight from beginning of active buffer for best results.
 autocmd BufEnter * :syntax sync fromstart
@@ -85,8 +86,10 @@ command! Rc if bufname('%') =~# '\.vimrc' | source % |
 
 " Plugin manager.
 call plug#begin('~/.vim/plugged')
-  " Color scheme.
+  " Color schemes.
   Plug 'tomasr/molokai'
+  Plug 'w0ng/vim-hybrid'
+  Plug 'NLKNguyen/papercolor-theme'
 
   " Fuzzy file finder.
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -147,6 +150,9 @@ call plug#begin('~/.vim/plugged')
   " Paranthesis autocomplete and other goodies.
   Plug 'tmsvg/pear-tree'
 
+  " Smooth scrolling (for more sane Ctrl+D and Ctrl+U).
+  " Plug 'psliwka/vim-smoothie'
+  
   " Language support.
   Plug 'vim-ruby/vim-ruby' " Syntax highlighting, indentation.
   Plug 'tpope/vim-rails' " Syntax highlighting, identation, commands, go to file ( gf )
@@ -159,7 +165,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 " Color scheme.
-color molokai
+color PaperColor
 
 " Coc - Action mappings
 nmap <leader>aa  :CocCommand<CR>
