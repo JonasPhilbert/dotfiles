@@ -57,8 +57,8 @@ else
 fi
 
 # Aliases - Personal
-alias tmuxdev="tmux split-window -h && tmux split-window && tmux resize-pane -R 30 && tmux select-pane -L"
-alias tmuxops="tmux split-window -h && tmux split-window && tmux select-pane -L"
+alias tmuxdev="tmux split-window -h && tmux split-window && tmux resize-pane -R 30 && tmux select-pane -L && tmux rename-window DEVELOPMENT"
+alias tmuxops="tmux split-window -h && tmux split-window && tmux select-pane -L && tmux rename-window OPS"
 alias islands="cd ~/git/islands"
 alias servers="lsof -iTCP -sTCP:LISTEN -n -P"
 
