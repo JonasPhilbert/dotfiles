@@ -173,13 +173,6 @@ cmp.setup({
 lspconfig.tsserver.setup({ capabilities = capabilities })
 lspconfig.solargraph.setup({ capabilities = capabilities })
 
--- local cmd = require('cmp')
--- cmp.setup({
---   mapping = cmp.mapping.preset.insert({
---     ['<C-Space>'] = cmp.mapping.complete(),
---   })
--- })
-
 -- Set the color scheme.
 vim.g.colors_name = 'PaperColor'
 
@@ -189,32 +182,3 @@ for i = 1, 4 do
   vim.api.nvim_set_keymap('n', illegalKeys[i], '<Nop>', { noremap = true })
   vim.api.nvim_set_keymap('i', illegalKeys[i], '<Nop>', { noremap = true })
 end
-
--- 
--- -- Coc - Action mappings
--- nmap <leader>aa  :CocCommand<CR>
--- nmap <leader>ac  <Plug>(coc-codeaction)
--- xmap <leader>ac  <Plug>(coc-codeaction-selected)
--- nmap <leader>ar <Plug>(coc-rename)
--- nmap <leader>af <Plug>(coc-format)
--- xmap <leader>af <Plug>(coc-format-selected)
--- nmap <silent> gd <Plug>(coc-definition)
--- nmap <silent> gy <Plug>(coc-type-definition)
--- nmap <silent> gi <Plug>(coc-implementation)
--- nmap <silent> gr <Plug>(coc-references)
--- 
--- -- Coc - Use K to show documentation under cursor.
--- nnoremap <silent> K :call CocAction('doHover')<CR>
--- 
--- -- Coc - Use TAB to trigger completion.
--- inoremap <silent><expr> <TAB>
---       \ pumvisible() ? "\<C-n>-- :
---       \ <SID>check_back_space() ? "\<TAB>-- :
---       \ coc#refresh()
--- inoremap <expr><S-TAB> pumvisible() ? "\<C-p>-- : "\<C-h>"
--- function! s:check_back_space() abort
---   let col = col('.') - 1
---   return !col || getline('.')[col - 1]  =~# '\s'
--- endfunction
--- 
--- --]]
