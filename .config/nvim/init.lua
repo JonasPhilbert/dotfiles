@@ -72,6 +72,27 @@ command! Rc if bufname('%') =~# '\.config\/nvim\/init.lua' | source % |
       \ endif
 ]])
 
+-- Ref: http://vimdoc.sourceforge.net/htmldoc/options.html#'statusline'
+-- :help statusline
+vim.cmd([[
+set statusline=
+set statusline+=%#StatusLineNC#
+set statusline+=%{FugitiveStatusline()}
+set statusline+=%#StatusLine#
+set statusline+=\ %<
+set statusline+=\ %f
+set statusline+=\ 
+set statusline+=%#WildMenu#
+set statusline+=%m
+set statusline+=%#StatusLineNC#
+set statusline+=\ %=
+set statusline=%f%=%{&filetype}
+set statusline+=\ 
+set statusline+=%p%%
+set statusline+=\ %l:%c
+set statusline+=\ 
+  ]])
+
 -- Plugin manager: https://github.com/wbthomason/packer.nvim#quickstart
 require('packer').startup(function(use)
   -- Packer can manage itself
