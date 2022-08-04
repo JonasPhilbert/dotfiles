@@ -38,6 +38,8 @@ vim.g.netrw_liststyle = 3 -- Display tree structure in netrw.
 -- autocmd BufEnter * :syntax sync fromstart
 -- Clear syntax when leave buffer for performance.
 -- autocmd BufLeave * :syntax sync clear
+-- vim.api.nvim_create_autocmd('BufEnter', { command = ':syntax sync fromstart' })
+-- vim.api.nvim_create_autocmd('BufLeave', { command = ':syntax sync clear' })
 
 -- Easier end of line motion for win keyboard.
 -- noremap ½ $
@@ -87,6 +89,9 @@ require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
+
+  -- Treesitter for better syntax highlighting.
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
   -- Fuzzy file finder.
   use {
@@ -150,13 +155,24 @@ require('packer').startup(function(use)
   use 'jparise/vim-graphql' -- Syntax highlighting, indentation.
 end)
 
--- LSP and completion (cm)
+-- Set the color scheme.
+vim.cmd('color PaperColor')
+
+-- Setup treesitter.
+require('nvim-treesitter.configs').setup({
+  highlight = {
+    enable = true,
+    additional_vim_regex_highlighting = false, -- Do not run native vim syntax highlighting, use treesitter only.
+  },
+  indent = {
+    enable = true,
+  },
+})
+
+-- LSP and completion (cmp) setup.
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
--- Set the color scheme.
-vim.cmd('color PaperColor')
 
 cmp.setup({
     window = {
