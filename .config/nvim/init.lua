@@ -149,9 +149,13 @@ require('packer').startup(function(use)
   use 'jparise/vim-graphql' -- Syntax highlighting, indentation.
 end)
 
+-- LSP and completion (cm)
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- Set the color scheme.
+vim.cmd('color PaperColor')
 
 cmp.setup({
     window = {
@@ -172,9 +176,6 @@ cmp.setup({
 
 lspconfig.tsserver.setup({ capabilities = capabilities })
 lspconfig.solargraph.setup({ capabilities = capabilities })
-
--- Set the color scheme.
-vim.g.colors_name = 'PaperColor'
 
 -- Hardmode >:D
 local illegalKeys = { '<Up>', '<Down>', '<Left>', '<Right>' }
