@@ -162,7 +162,7 @@ vim.cmd('color PaperColor')
 require('nvim-treesitter.configs').setup({
   highlight = {
     enable = true,
-    additional_vim_regex_highlighting = false, -- Do not run native vim syntax highlighting, use treesitter only.
+    -- additional_vim_regex_highlighting = false, -- Do not run native vim syntax highlighting, use treesitter only. (annoying in fugitive)
   },
   indent = {
     enable = true,
