@@ -26,23 +26,11 @@ vim.o.cursorline = true -- Highline line of cursor.
 vim.o.regexpengine = 1 -- Use old regex engine, which can boost performance.
 vim.o.termguicolors = true -- Use true colors rather than what $TERM supports.
 vim.o.wrap = false -- Do not wrap overflowing lines to next line.
--- set list listchars=nbsp:€ -- Show NBSP characters as euro sign to help identify mishaps.
+vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
 
 vim.g.mapleader = ' ' -- Leader key is space.
 vim.g.netrw_fastbrowse = 0 -- Wipe/delete netrw buffers when exiting it.
 vim.g.netrw_liststyle = 3 -- Display tree structure in netrw.
-
--- packadd cfilter -- Activate the cfilter plugin, see :h cfilter
-
--- Syntax highlight from beginning of active buffer for best results.
--- autocmd BufEnter * :syntax sync fromstart
--- Clear syntax when leave buffer for performance.
--- autocmd BufLeave * :syntax sync clear
--- vim.api.nvim_create_autocmd('BufEnter', { command = ':syntax sync fromstart' })
--- vim.api.nvim_create_autocmd('BufLeave', { command = ':syntax sync clear' })
-
--- Easier end of line motion for win keyboard.
--- noremap ½ $
 
 local nore_silent = { noremap = true, silent = true }
 
