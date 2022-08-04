@@ -111,9 +111,6 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
 
-  -- Treesitter for better syntax highlighting.
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
   -- Fuzzy file finder.
   use {
     'junegunn/fzf.vim',
@@ -178,17 +175,6 @@ end)
 
 -- Set the color scheme.
 vim.cmd('color PaperColor')
-
--- Setup treesitter.
-require('nvim-treesitter.configs').setup({
-  highlight = {
-    enable = true,
-    -- additional_vim_regex_highlighting = false, -- Do not run native vim syntax highlighting, use treesitter only. (annoying in fugitive)
-  },
-  indent = {
-    enable = true,
-  },
-})
 
 -- LSP and completion (cmp) setup.
 local lspconfig = require('lspconfig')
