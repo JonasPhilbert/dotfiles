@@ -63,12 +63,12 @@ vim.api.nvim_set_keymap('v', '<leader>f', 'y/<c-r>0', { noremap = true })
 -- File explorer mapping.
 vim.api.nvim_set_keymap('n', '<leader>A', ':Explore<cr>', nore_silent)
 
---[[
 -- .vimrc command to edit or source.
-command! Rc if bufname('%') =~# '\.vimrc' | source % |
-      \ else | edit ~/.vimrc |
+vim.cmd([[
+command! Rc if bufname('%') =~# '\.config\/nvim\/init.lua' | source % |
+      \ else | edit ~/.config/nvim/init.lua |
       \ endif
---]]
+]])
 
 -- Plugin manager: https://github.com/wbthomason/packer.nvim#quickstart
 require('packer').startup(function(use)
@@ -86,6 +86,7 @@ require('packer').startup(function(use)
   -- LSP completions.
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-nvim-lua'
 
   -- Fuzzy file finder.
   use {
@@ -159,8 +160,8 @@ vim.cmd('color PaperColor')
 
 cmp.setup({
     window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
+      completion = cmp.config.window.bordered(),
+      documentation = cmp.config.window.bordered(),
     },
     mapping = cmp.mapping.preset.insert({
       ['<C-b>'] = cmp.mapping.scroll_docs(-4),
@@ -168,8 +169,23 @@ cmp.setup({
       ['<C-Space>'] = cmp.mapping.complete(),
       ['<C-e>'] = cmp.mapping.abort(),
       ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+      ['<Tab>'] = function(fallback)
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          fallback()
+        end
+      end,
+      ['<S-Tab>'] = function(fallback)
+        if cmp.visible() then
+          cmp.select_prev_item()
+        else
+          fallback()
+        end
+      end,
     }),
     sources = cmp.config.sources({
+      { name = 'nvim_lua' },
       { name = 'nvim_lsp' },
     })
   })
