@@ -53,6 +53,14 @@ vim.keymap.set('v', '<leader>f', 'y/<c-r>0', { noremap = true })
 -- File explorer mapping.
 vim.keymap.set('n', '<leader>A', ':Explore<cr>', nore_silent)
 
+-- LSP mapping. For completion, see cmp package and setup thereof.
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true })
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true })
+vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { noremap = true })
+vim.keymap.set('n', 'aa', vim.lsp.buf.code_action, { noremap = true })
+vim.keymap.set('n', 'ar', vim.lsp.buf.rename, { noremap = true })
+vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
+
 -- .vimrc command to edit or source.
 vim.cmd([[
 command! Rc if bufname('%') =~# '\.config\/nvim\/init.lua' | source % |
