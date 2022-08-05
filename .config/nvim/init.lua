@@ -60,27 +60,6 @@ command! Rc if bufname('%') =~# '\.config\/nvim\/init.lua' | source % |
       \ endif
 ]])
 
--- Ref: http://vimdoc.sourceforge.net/htmldoc/options.html#'statusline'
--- :help statusline
-vim.cmd([[
-set statusline=
-set statusline+=%#StatusLineNC#
-set statusline+=%{FugitiveStatusline()}
-set statusline+=%#StatusLine#
-set statusline+=\ %<
-set statusline+=\ %f
-set statusline+=\ 
-set statusline+=%#WildMenu#
-set statusline+=%m
-set statusline+=%#StatusLineNC#
-set statusline+=\ %=
-set statusline=%f%=%{&filetype}
-set statusline+=\ 
-set statusline+=%p%%
-set statusline+=\ %l:%c
-set statusline+=\ 
-  ]])
-
 -- Plugin manager: https://github.com/wbthomason/packer.nvim#quickstart
 require('packer').startup(function(use)
   -- Packer can manage itself
@@ -98,6 +77,12 @@ require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
+
+  -- Status line.
+  use {
+    'nvim-lualine/lualine.nvim',
+    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
+  }
 
   -- Fuzzy file finder.
   use {
@@ -163,6 +148,16 @@ end)
 
 -- Set the color scheme.
 vim.cmd('color PaperColor')
+
+-- Status line (lualine) setup.
+require('lualine').setup({
+  options = {
+    icons_enabled = false,
+    theme = 'onedark',
+    component_separators = {},
+    section_separators = {},
+  }
+})
 
 -- LSP and completion (cmp) setup.
 local lspconfig = require('lspconfig')
