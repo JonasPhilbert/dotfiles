@@ -123,9 +123,6 @@ require('packer').startup(function(use)
   use 'mbbill/undotree'
   vim.keymap.set('n', '<leader>U', ':UndotreeToggle<CR>:UndotreeFocus<CR>', nore_silent)
 
-  -- Automatically close blocks with end, endif, etc.
-  -- use 'tpope/vim-endwise'
-
   -- FZF for git branches.
   use 'stsewd/fzf-checkout.vim'
   vim.keymap.set('n', '<leader>B', ':GBranches!<CR>', { noremap = true })
