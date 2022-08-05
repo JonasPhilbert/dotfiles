@@ -32,11 +32,6 @@ vim.g.mapleader = ' ' -- Leader key is space.
 vim.g.netrw_fastbrowse = 0 -- Wipe/delete netrw buffers when exiting it.
 vim.g.netrw_liststyle = 3 -- Display tree structure in netrw.
 
--- Syntax highlight from beginning of active buffer for best results.
-vim.cmd('autocmd BufEnter * :syntax sync fromstart')
--- Clear syntax when leave buffer for performance.
-vim.cmd('autocmd BufLeave * :syntax sync clear')
-
 local nore_silent = { noremap = true, silent = true }
 
 -- Switch to last used buffer using backspace.
