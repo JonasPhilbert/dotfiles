@@ -44,8 +44,8 @@ vim.keymap.set('n', '<leader>j', ':wincmd j<CR>', nore_silent)
 vim.keymap.set('n', '<leader>k', ':wincmd k<CR>', nore_silent)
 
 -- Quickfix list naviagtion.
-vim.keymap.set('n', '<silent><leader>J', ':cnext<CR>', nore_silent)
-vim.keymap.set('n', '<silent><leader>K', ':cprev<CR>', nore_silent)
+vim.keymap.set('n', '<leader>J', ':cnext<CR>', nore_silent)
+vim.keymap.set('n', '<leader>K', ':cprev<CR>', nore_silent)
 
 -- Search for string when selected in visual mode mapping.
 vim.keymap.set('v', '<leader>f', 'y/<c-r>0', { noremap = true })
