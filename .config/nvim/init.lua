@@ -35,23 +35,23 @@ vim.g.netrw_liststyle = 3 -- Display tree structure in netrw.
 local nore_silent = { noremap = true, silent = true }
 
 -- Switch to last used buffer using backspace.
-vim.api.nvim_set_keymap('n', '<BS>', '<C-^><CR>', nore_silent)
+vim.keymap.set('n', '<BS>', '<C-^><CR>', nore_silent)
 
 -- Window naviagtion.
-vim.api.nvim_set_keymap('n', '<leader>h', ':wincmd h<CR>', nore_silent)
-vim.api.nvim_set_keymap('n', '<leader>l', ':wincmd l<CR>', nore_silent)
-vim.api.nvim_set_keymap('n', '<leader>j', ':wincmd j<CR>', nore_silent)
-vim.api.nvim_set_keymap('n', '<leader>k', ':wincmd k<CR>', nore_silent)
+vim.keymap.set('n', '<leader>h', ':wincmd h<CR>', nore_silent)
+vim.keymap.set('n', '<leader>l', ':wincmd l<CR>', nore_silent)
+vim.keymap.set('n', '<leader>j', ':wincmd j<CR>', nore_silent)
+vim.keymap.set('n', '<leader>k', ':wincmd k<CR>', nore_silent)
 
 -- Quickfix list naviagtion.
-vim.api.nvim_set_keymap('n', '<silent><leader>J', ':cnext<CR>', nore_silent)
-vim.api.nvim_set_keymap('n', '<silent><leader>K', ':cprev<CR>', nore_silent)
+vim.keymap.set('n', '<silent><leader>J', ':cnext<CR>', nore_silent)
+vim.keymap.set('n', '<silent><leader>K', ':cprev<CR>', nore_silent)
 
 -- Search for string when selected in visual mode mapping.
-vim.api.nvim_set_keymap('v', '<leader>f', 'y/<c-r>0', { noremap = true })
+vim.keymap.set('v', '<leader>f', 'y/<c-r>0', { noremap = true })
 
 -- File explorer mapping.
-vim.api.nvim_set_keymap('n', '<leader>A', ':Explore<cr>', nore_silent)
+vim.keymap.set('n', '<leader>A', ':Explore<cr>', nore_silent)
 
 -- .vimrc command to edit or source.
 vim.cmd([[
@@ -91,10 +91,10 @@ require('packer').startup(function(use)
     requires = {{'junegunn/fzf'}},
   }
   vim.g.fzf_layout = { window = { width = 1, height = 1 } } -- FZF window fill entire screen.
-  vim.api.nvim_set_keymap('n', '<leader><space>', ':Buffers<CR>', nore_silent)
-  vim.api.nvim_set_keymap('n', '<leader>f', ':GFiles<CR>', nore_silent)
-  vim.api.nvim_set_keymap('n', '<leader>F', ':Ag<CR>', nore_silent)
-  vim.api.nvim_set_keymap('n', '<leader>F', 'y:Ag <c-r>0<CR>', nore_silent)
+  vim.keymap.set('n', '<leader><space>', ':Buffers<CR>', nore_silent)
+  vim.keymap.set('n', '<leader>f', ':GFiles<CR>', nore_silent)
+  vim.keymap.set('n', '<leader>F', ':Ag<CR>', nore_silent)
+  vim.keymap.set('n', '<leader>F', 'y:Ag <c-r>0<CR>', nore_silent)
   -- command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0) -- Use <:Rag 'query' path> to search for ag matches in specific folder
 
   -- Change surrounding delimiter with cs<d><d> (eg. cs"{ )
@@ -102,7 +102,7 @@ require('packer').startup(function(use)
 
   -- Git client using :G <command> (eg. :G rebase -i )
   use 'tpope/vim-fugitive'
-  vim.api.nvim_set_keymap('n', '<leader>g', ':G<space>', { noremap = true })
+  vim.keymap.set('n', '<leader>g', ':G<space>', { noremap = true })
 
   -- Toggle code comments using cc (or with motion: 2cc )
   use 'scrooloose/nerdcommenter'
@@ -113,14 +113,14 @@ require('packer').startup(function(use)
 
   -- Undo steps manager and overview.
   use 'mbbill/undotree'
-  vim.api.nvim_set_keymap('n', '<leader>U', ':UndotreeToggle<CR>:UndotreeFocus<CR>', nore_silent)
+  vim.keymap.set('n', '<leader>U', ':UndotreeToggle<CR>:UndotreeFocus<CR>', nore_silent)
 
   -- Automatically close blocks with end, endif, etc.
   -- use 'tpope/vim-endwise'
 
   -- FZF for git branches.
   use 'stsewd/fzf-checkout.vim'
-  vim.api.nvim_set_keymap('n', '<leader>B', ':GBranches!<CR>', { noremap = true })
+  vim.keymap.set('n', '<leader>B', ':GBranches!<CR>', { noremap = true })
 
   -- Hex color highlights in code.
   use 'lilydjwg/colorizer'
@@ -131,8 +131,8 @@ require('packer').startup(function(use)
 
   -- I18n tooling.
   use 'airblade/vim-localorie'
-  vim.api.nvim_set_keymap('n', '<leader>lt', ':call localorie#translate()<CR>', { noremap = true })
-  vim.api.nvim_set_keymap('n', '<leader>le', ':call localorie#expand_key()<CR>', { noremap = true })
+  vim.keymap.set('n', '<leader>lt', ':call localorie#translate()<CR>', { noremap = true })
+  vim.keymap.set('n', '<leader>le', ':call localorie#expand_key()<CR>', { noremap = true })
 
   -- Paranthesis autocomplete and other goodies.
   use 'tmsvg/pear-tree'
@@ -202,6 +202,6 @@ lspconfig.solargraph.setup({ capabilities = capabilities })
 -- Hardmode >:D
 local illegalKeys = { '<Up>', '<Down>', '<Left>', '<Right>' }
 for i = 1, 4 do
-  vim.api.nvim_set_keymap('n', illegalKeys[i], '<Nop>', { noremap = true })
-  vim.api.nvim_set_keymap('i', illegalKeys[i], '<Nop>', { noremap = true })
+  vim.keymap.set('n', illegalKeys[i], '<Nop>', { noremap = true })
+  vim.keymap.set('i', illegalKeys[i], '<Nop>', { noremap = true })
 end
