@@ -37,6 +37,9 @@ local nore_silent = { noremap = true, silent = true }
 -- Switch to last used buffer using backspace.
 vim.keymap.set('n', '<BS>', '<C-^><CR>', nore_silent)
 
+-- Yank current path to clipboard using <Y>.
+vim.keymap.set('n', 'Y', ':let @+ = expand("%")<CR>')
+
 -- Window naviagtion.
 vim.keymap.set('n', '<leader>h', ':wincmd h<CR>', nore_silent)
 vim.keymap.set('n', '<leader>l', ':wincmd l<CR>', nore_silent)
