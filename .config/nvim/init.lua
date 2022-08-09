@@ -46,6 +46,8 @@ vim.keymap.set('n', '<leader>k', ':wincmd k<CR>', nore_silent)
 -- Quickfix list naviagtion.
 vim.keymap.set('n', '<leader>J', ':cnext<CR>', nore_silent)
 vim.keymap.set('n', '<leader>K', ':cprev<CR>', nore_silent)
+vim.keymap.set('n', '<leader>H', ':colder<CR>', nore_silent)
+vim.keymap.set('n', '<leader>L', ':cnewer<CR>', nore_silent)
 
 -- Search for string when selected in visual mode mapping.
 vim.keymap.set('v', '<leader>f', 'y/<c-r>0', { noremap = true })
@@ -85,6 +87,8 @@ require('packer').startup(function(use)
   use 'hrsh7th/nvim-cmp'
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-nvim-lua'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
 
   -- Status line.
   use {
@@ -206,6 +210,8 @@ cmp.setup({
     sources = cmp.config.sources({
       { name = 'nvim_lua' },
       { name = 'nvim_lsp' },
+      { name = 'buffer' },
+      { name = 'path' },
     })
   })
 
