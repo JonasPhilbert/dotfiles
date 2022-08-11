@@ -29,8 +29,6 @@ vim.o.wrap = false -- Do not wrap overflowing lines to next line.
 vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
 
 vim.g.mapleader = ' ' -- Leader key is space.
-vim.g.netrw_fastbrowse = 0 -- Wipe/delete netrw buffers when exiting it.
-vim.g.netrw_liststyle = 3 -- Display tree structure in netrw.
 
 local nore_silent = { noremap = true, silent = true }
 
@@ -56,7 +54,7 @@ vim.keymap.set('n', '<leader>L', ':cnewer<CR>', nore_silent)
 vim.keymap.set('v', '<leader>f', 'y/<c-r>0', { noremap = true })
 
 -- File explorer mapping.
-vim.keymap.set('n', '<leader>A', ':Explore<cr>', nore_silent)
+vim.keymap.set('n', '<leader>A', ':Dirvish<cr>', nore_silent)
 
 -- LSP mapping. For completion, see cmp package and setup thereof.
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true })
@@ -138,9 +136,6 @@ require('packer').startup(function(use)
   use 'lilydjwg/colorizer'
   vim.g.colorizer_maxlines = 1000 -- Important for performance. Really slow in large buffers, so limit to 1k lines.
 
-  -- Enhances netrw. Use - in any buffer to access. Then use I for netrw info.
-  use 'tpope/vim-vinegar'
-
   -- I18n tooling.
   use 'airblade/vim-localorie'
   vim.keymap.set('n', '<leader>lt', ':call localorie#translate()<CR>', { noremap = true })
@@ -148,6 +143,9 @@ require('packer').startup(function(use)
 
   -- Paranthesis autocomplete and other goodies.
   use 'tmsvg/pear-tree'
+
+  -- File explorer.
+  use 'justinmk/vim-dirvish'
   
   -- Language support.
   use 'vim-ruby/vim-ruby' -- Syntax highlighting, indentation.
