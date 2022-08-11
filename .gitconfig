@@ -1,9 +1,18 @@
 [user]
-	name = JonasPhilbert
-	email = jonas@priestyard.dk
+  name = Jonas Philbert
+  email = 6285509+JonasPhilbert@users.noreply.github.com
 [pull]
-	rebase = true
+  rebase = true
 [core]
-	editor = nvim
+  editor = nvim
 [push]
-	default = current # Allows `git push -u` to push and automatically set upstream to origin/HEAD
+  default = current # Allows `git push -u` to push and automatically set upstream to origin/HEAD
+[init]
+  defaultBranch = master
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+[alias]
+  undo = reset --soft HEAD~1
