@@ -146,6 +146,9 @@ require('packer').startup(function(use)
 
   -- File explorer.
   use 'justinmk/vim-dirvish'
+
+  -- YAML tooling.
+  use 'cuducos/yaml.nvim'
   
   -- Language support.
   use 'vim-ruby/vim-ruby' -- Syntax highlighting, indentation.
