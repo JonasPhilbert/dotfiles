@@ -91,6 +91,9 @@ require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
 
+  -- Treesitter for better syntax highlighting.
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
   -- Status line.
   use {
     'nvim-lualine/lualine.nvim',
@@ -177,6 +180,19 @@ require('lualine').setup({
         path = 1,
       },
     }
+  },
+})
+
+-- Setup treesitter.
+require('nvim-treesitter.configs').setup({
+  ensure_installed = { 'lua', 'ruby', 'typescript', 'tsx', 'javascript', 'yaml', 'json' },
+  auto_install = true,
+  highlight = {
+    enable = true,
+    --additional_vim_regex_highlighting = { 'fugitive' }, -- Do not run native vim syntax highlighting, use treesitter only. (annoying in fugitive)
+  },
+  indent = {
+    enable = true,
   },
 })
 
