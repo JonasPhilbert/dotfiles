@@ -142,7 +142,7 @@ require('packer').startup(function(use)
   -- I18n tooling.
   use 'airblade/vim-localorie'
   vim.keymap.set('n', '<leader>lt', ':call localorie#translate()<CR>', { noremap = true })
-  vim.keymap.set('n', '<leader>le', ':call localorie#expand_key()<CR>', { noremap = true })
+  vim.keymap.set('n', '<leader>le', ':echo localorie#expand_key()<CR>', { noremap = true })
 
   -- Paranthesis autocomplete and other goodies.
   use 'tmsvg/pear-tree'
