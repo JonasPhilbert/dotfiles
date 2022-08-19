@@ -27,6 +27,7 @@ vim.o.regexpengine = 1 -- Use old regex engine, which can boost performance.
 vim.o.termguicolors = true -- Use true colors rather than what $TERM supports.
 vim.o.wrap = false -- Do not wrap overflowing lines to next line.
 vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
+vim.cmd('color PaperColor') -- Set the color scheme.
 
 vim.g.mapleader = ' ' -- Leader key is space.
 
@@ -81,15 +82,22 @@ require('packer').startup(function(use)
   use 'w0ng/vim-hybrid'
   use 'NLKNguyen/papercolor-theme'
 
-  -- Configurations for Nvim LSP.
+  -- Configurations for Nvim LSP. Esentially just allows LSP to work.
   use 'neovim/nvim-lspconfig'
 
-  -- LSP completions.
+  -- Installation helper for LSP servers and more.
+  use "williamboman/mason.nvim"
+
+  -- Autocomplete popup framwork thingy.
   use 'hrsh7th/nvim-cmp'
-  use 'hrsh7th/cmp-nvim-lsp'
+  -- Cmp autocompletion sources:
+  use 'hrsh7th/cmp-nvim-lsp' -- Get autocompletions from LSP.
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+  -- Cmp snippet engine:
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
 
   -- Treesitter for better syntax highlighting.
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -162,9 +170,6 @@ require('packer').startup(function(use)
   use 'jparise/vim-graphql' -- Syntax highlighting, indentation.
 end)
 
--- Set the color scheme.
-vim.cmd('color PaperColor')
-
 -- Status line (lualine) setup.
 require('lualine').setup({
   options = {
@@ -183,7 +188,7 @@ require('lualine').setup({
   },
 })
 
--- Setup treesitter.
+-- Treesitter setup.
 require('nvim-treesitter.configs').setup({
   ensure_installed = { 'lua', 'ruby', 'typescript', 'tsx', 'javascript', 'yaml', 'json' },
   auto_install = true,
@@ -196,48 +201,56 @@ require('nvim-treesitter.configs').setup({
   },
 })
 
+-- Mason setup.
+require('mason').setup()
+
 -- LSP and completion (cmp) setup.
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 cmp.setup({
-    window = {
-      completion = cmp.config.window.bordered(),
-      documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-      ['<Tab>'] = function(fallback)
-        if cmp.visible() then
-          cmp.select_next_item()
-        else
-          fallback()
-        end
-      end,
-      ['<S-Tab>'] = function(fallback)
-        if cmp.visible() then
-          cmp.select_prev_item()
-        else
-          fallback()
-        end
-      end,
-    }),
-    sources = cmp.config.sources({
-      { name = 'nvim_lua' },
-      { name = 'nvim_lsp' },
-      { name = 'buffer' },
-      { name = 'path' },
-    })
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body)
+    end
+  },
+  window = {
+    completion = cmp.config.window.bordered(),
+    documentation = cmp.config.window.bordered(),
+  },
+  mapping = cmp.mapping.preset.insert({
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.abort(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
+  }),
+  sources = cmp.config.sources({
+    { name = 'nvim_lua' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
+    { name = 'path' },
   })
+})
 
-lspconfig.tsserver.setup({ capabilities = capabilities })
-lspconfig.solargraph.setup({ capabilities = capabilities })
-lspconfig.cssls.setup({ capabilities = capabilities })
+lspconfig['tsserver'].setup({ capabilities = capabilities })
+lspconfig['solargraph'].setup({ capabilities = capabilities })
+lspconfig['cssls'].setup({ capabilities = capabilities })
 
 -- Hardmode >:D
 local illegalKeys = { '<Up>', '<Down>', '<Left>', '<Right>' }
