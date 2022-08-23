@@ -252,6 +252,7 @@ cmp.setup({
 lspconfig['tsserver'].setup({ capabilities = capabilities })
 lspconfig['solargraph'].setup({ capabilities = capabilities })
 lspconfig['cssls'].setup({ capabilities = capabilities })
+lspconfig['clangd'].setup({ capabilities = capabilities })
 
 -- Hardmode >:D
 local illegalKeys = { '<Up>', '<Down>', '<Left>', '<Right>' }
