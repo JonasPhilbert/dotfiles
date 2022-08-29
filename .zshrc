@@ -35,11 +35,6 @@ if [[ -x "$(command -v /opt/homebrew/bin/brew)" ]]; then
 fi
 
 # Recommended by Homebrew.
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
-  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-# Recommended by Homebrew.
 if [[ -x "$(command -v rbenv)" ]]; then
   eval "$(rbenv init - --no-rehash)"
 fi
@@ -73,3 +68,6 @@ alias bymc="bym && git restore db/schema.rb"
 alias pbymc="git pull && bymc"
 alias tsc="node_modules/typescript/bin/tsc"
 alias cloudman="foreman start -c worker_cloudsync=3"
+alias prs="gh pr status | cat"
+alias prsg="gh pr status | cat | grep -i"
+alias prc="gh pr checkout"
