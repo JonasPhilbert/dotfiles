@@ -3,12 +3,12 @@
 
 # https://stackoverflow.com/a/16363159/4088882
 class String
-  def blue "\e[34m#{self}\e[0m" end
-  def green "\e[32m#{self}\e[0m" end
-  def red "\e[31m#{self}\e[0m" end
-  def bold "\e[1m#{self}\e[22m" end
-  def underline "\e[4m#{self}\e[24m" end
-  def reverse_color "\e[7m#{self}\e[27m" end
+  def blue; "\e[34m#{self}\e[0m" end
+  def green; "\e[32m#{self}\e[0m" end
+  def red; "\e[31m#{self}\e[0m" end
+  def bold; "\e[1m#{self}\e[22m" end
+  def underline; "\e[4m#{self}\e[24m" end
+  def reverse_color; "\e[7m#{self}\e[27m" end
 end
 
 def checkout(pull_number)
