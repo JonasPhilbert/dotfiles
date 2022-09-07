@@ -33,13 +33,13 @@ end
 
 pulls.reject! { |pull| pull == {} || pulls.map{ |e| e[:number] }.count(pull[:number]) > 1 }
 
-unless ARGV.first
-  puts('No search pattern provided.')
-  return
+if ARGV.first
+  search_exp = Regexp.new(ARGV.first, Regexp::IGNORECASE)
+  matches = pulls.filter { |pull| pull[:title].match?(search_exp) }
+else
+  search_exp = //
+  matches = pulls
 end
-
-search_exp = Regexp.new(ARGV.first, Regexp::IGNORECASE)
-matches = pulls.filter { |pull| pull[:title].match?(search_exp) }
 
 if matches.count == 0
   puts("No pull-requests match: #{ARGV.first.red}")
@@ -50,6 +50,7 @@ end
   matches.each_with_index do |pull, i|
     puts("#{"#{i+1})".bold} #{pretty_pull(pull, search_exp, current_branch)}")
   end
+  puts
   print("Input the number of the pull-request you wish to check out: (1-#{matches.count}): ")
   response = $stdin.gets("\n")&.chomp
   return unless response
