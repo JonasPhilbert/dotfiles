@@ -16,3 +16,4 @@
   smudge = git-lfs smudge -- %f
 [alias]
   undo = reset --soft HEAD~1
+  wip = commit -a -m WIP
