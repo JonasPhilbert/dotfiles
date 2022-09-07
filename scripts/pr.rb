@@ -15,9 +15,8 @@ def checkout(pull_number)
 end
 
 def pretty_pull(pull, search_exp, current_branch)
-  branch_section = "[#{pull[:branch]}]".green
-  branch_section = "#{branch_section} (current branch)".bold if current_branch == pull[:branch]
-  "#{('#' + pull[:number]).blue} #{pull[:title].gsub(search_exp, '\0'.underline.red)} #{branch_section}"
+  branch_section = current_branch == pull[:branch] ? "[#{pull[:branch]} (HEAD)]".green.bold : "[#{pull[:branch]}]".green
+  "#{('#' + pull[:number]).blue} #{branch_section} #{pull[:title].gsub(search_exp, '\0'.underline.red)}"
 end
 
 current_branch = `git branch --show-current`.chomp
@@ -47,7 +46,7 @@ if matches.count == 0
   return
 end
 
-if matches.count > 1
+# if matches.count > 1
   matches.each_with_index do |pull, i|
     puts("#{"#{i+1})".bold} #{pretty_pull(pull, search_exp, current_branch)}")
   end
@@ -57,13 +56,13 @@ if matches.count > 1
 
   num = response.to_i
   checkout(matches[num - 1][:number]) if num > 0
-else
-  # TODO: Consider just always showing the list, even if one entry.
-  pull = matches.first
-  puts(pretty_pull(pull, search_exp, current_branch))
-  print('Do you want to check out the pull-request? (Y/n): ')
-  response = $stdin.gets("\n")&.chomp
-  return unless response
-
-  checkout(pull[:number]) if response == '' || response.casecmp?('y')
-end
+# else
+#   # TODO: Consider just always showing the list, even if one entry.
+#   pull = matches.first
+#   puts(pretty_pull(pull, search_exp, current_branch))
+#   print('Do you want to check out the pull-request? (Y/n): ')
+#   response = $stdin.gets("\n")&.chomp
+#   return unless response
+# 
+#   checkout(pull[:number]) if response == '' || response.casecmp?('y')
+# end
