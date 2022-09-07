@@ -69,8 +69,5 @@ alias pbymc="git pull && bymc"
 alias tsc="node_modules/typescript/bin/tsc"
 alias cloudman="foreman start -c worker_cloudsync=3"
 
-# Aliases - GitHub
-alias prs="gh pr status | cat"
-alias prsg="gh pr status | cat | grep -i"
-alias prc="gh pr checkout"
-alias prw="gh pr view --web"
+# Aliases - Scripts
+alias pr="~/scripts/pr.rb"
