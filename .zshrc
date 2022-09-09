@@ -68,6 +68,7 @@ alias bymc="bym && git restore db/schema.rb"
 alias pbymc="git pull && bymc"
 alias tsc="node_modules/typescript/bin/tsc"
 alias cloudman="foreman start -c worker_cloudsync=3"
+alias prw="gh pr view --web"
 
 # Aliases - Scripts
 alias pr="~/scripts/pr.rb"
