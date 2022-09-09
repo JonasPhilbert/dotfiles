@@ -4,7 +4,11 @@ alt_send_esc: false
 font:
   size: 14.0
   normal:
-    family: Comic Mono
+    family: Comic Code Ligatures
+    style: Medium
   bold:
-    family: Comic Mono
+    family: Comic Code Ligatures
     style: Bold
+  italic:
+    family: Comic Code Ligatures
+    style: Italic
