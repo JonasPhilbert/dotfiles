@@ -254,6 +254,7 @@ lspconfig['solargraph'].setup({ capabilities = capabilities })
 lspconfig['cssls'].setup({ capabilities = capabilities })
 lspconfig['clangd'].setup({ capabilities = capabilities })
 lspconfig['cmake'].setup({ capabilities = capabilities })
+lspconfig['gopls'].setup({ capabilities = capabilities })
 
 -- Hardmode >:D
 local illegalKeys = { '<Up>', '<Down>', '<Left>', '<Right>' }
