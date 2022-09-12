@@ -116,6 +116,7 @@ require('packer').startup(function(use)
     requires = {{'junegunn/fzf'}},
   }
   vim.g.fzf_layout = { window = { width = 1, height = 1 } } -- FZF window fill entire screen.
+  vim.cmd("command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)") -- https://github.com/junegunn/fzf.vim/issues/346#issuecomment-655446292
   vim.keymap.set('n', '<leader><space>', ':Buffers<CR>', nore_silent)
   vim.keymap.set('n', '<leader>f', ':GFiles<CR>', nore_silent)
   vim.keymap.set('n', '<leader>F', ':Ag<CR>', nore_silent)
