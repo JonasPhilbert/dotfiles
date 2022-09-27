@@ -69,6 +69,7 @@ alias pbymc="git pull && bymc"
 alias tsc="node_modules/typescript/bin/tsc"
 alias cloudman="foreman start -c worker_cloudsync=3"
 alias prw="gh pr view --web"
+alias rfail="rspec --only-failures"
 
 # Aliases - Scripts
 alias pr="~/scripts/pr.rb"
