@@ -220,7 +220,7 @@ require('mason').setup()
 -- LSP and completion (cmp) setup.
 local lspconfig = require('lspconfig')
 local cmp = require('cmp')
-local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 cmp.setup({
   snippet = {
