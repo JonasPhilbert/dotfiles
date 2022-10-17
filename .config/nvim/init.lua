@@ -165,6 +165,9 @@ require('packer').startup(function(use)
   -- File explorer.
   use 'justinmk/vim-dirvish'
 
+  -- Sneak-like leaping/searching through all splits.
+  use 'ggandor/leap.nvim'
+
   -- YAML tooling.
   use 'cuducos/yaml.nvim'
   
@@ -176,6 +179,9 @@ require('packer').startup(function(use)
   use 'maxmellon/vim-jsx-pretty' -- Syntax highlighting, indentation.
   use 'jparise/vim-graphql' -- Syntax highlighting, indentation.
 end)
+
+-- Leap (searching) setup.
+require('leap').add_default_mappings()
 
 -- Status line (lualine) setup.
 require('lualine').setup({
