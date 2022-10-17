@@ -73,6 +73,10 @@ command! Rc if bufname('%') =~# '\.config\/nvim\/init.lua' | source % |
       \ endif
 ]])
 
+-- Rename current file command: :Rename new_name.md
+vim.cmd("command! -nargs=1 Rename saveas %:h/<args> | call delete(expand('#')) | bd #")
+-- vim.cmd("command! -nargs=1 Rename saveas %:h/<args>")
+
 -- Plugin manager: https://github.com/wbthomason/packer.nvim#quickstart
 require('packer').startup(function(use)
   -- Packer can manage itself
