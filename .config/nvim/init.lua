@@ -27,12 +27,16 @@ vim.o.cursorline = true -- Highline line of cursor.
 vim.o.regexpengine = 1 -- Use old regex engine, which can boost performance.
 vim.o.termguicolors = true -- Use true colors rather than what $TERM supports.
 vim.o.wrap = false -- Do not wrap overflowing lines to next line.
+-- Really slow: vim.o.shellcmdflag = '-ic' -- Set flags when invoking shell inside vim to act as 'interactive', which prompts bash/zsh to load .rc files (supports aliases).
 vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
 vim.cmd('color PaperColor') -- Set the color scheme.
 
 vim.g.mapleader = ' ' -- Leader key is space.
 
 local nore_silent = { noremap = true, silent = true }
+
+-- Command to rename current file: Rename new_name.foo
+vim.cmd("command! -nargs=1 Rename saveas <args> | call delete(expand('#')) | bd #")
 
 -- Switch to last used buffer using backspace.
 vim.keymap.set('n', '<BS>', '<C-^><CR>', nore_silent)
