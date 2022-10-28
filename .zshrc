@@ -51,12 +51,24 @@ else
   export EDITOR='nvim'
 fi
 
+# Create tnt dir for tnt (trash) alias.
+if [ ! -d ~/.tnt ]; then
+  mkdir ~/.tnt
+fi
+
+function trash() {
+  NAME="$1.$(date +"%Y-%m-%d-%H%M%S")"
+  mv $1 $NAME
+  mv $NAME ~/.tnt
+}
+
 # Aliases - Personal
 alias tmuxdev="tmux split-window -h && tmux split-window && tmux resize-pane -R 30 && tmux select-pane -L && tmux rename-window DEVELOPMENT"
 alias tmuxops="tmux split-window -h && tmux split-window && tmux select-pane -L && tmux rename-window OPS"
 alias islands="cd ~/git/islands"
 alias servers="lsof -iTCP -sTCP:LISTEN -n -P"
 alias notes="$EDITOR ~/NOTES.md"
+alias rm="echo You should probably use 'trash' instead. To override, use full bin path: '/bin/rm'."
 
 # Aliases - Work
 alias fl="cd ~/git/flightlogger"
