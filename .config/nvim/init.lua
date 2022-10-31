@@ -174,6 +174,11 @@ require('packer').startup(function(use)
 
   -- YAML tooling.
   use 'cuducos/yaml.nvim'
+
+  -- Cycle though case styles (snake_case, camelCase) using tilde (~).
+  use 'icatalina/vim-case-change'
+  vim.g.casechange_nomap = 1
+  vim.keymap.set('v', 'z', '"zc<C-R>=casechange#next(@z)<CR><Esc>v`[', { noremap = true }) -- Default bind is tilde, but tilde sucks on nordic keyboards. Override bind to "z".
   
   -- Language support.
   use 'vim-ruby/vim-ruby' -- Syntax highlighting, indentation.
