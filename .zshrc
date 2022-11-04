@@ -1,12 +1,17 @@
+# Bash cheat sheet: https://devhints.io/bash
 # Difference between single and double square brackets in if-statements: http://mywiki.wooledge.org/BashFAQ/031
+
+LOADED=()
+
+#########################################
+# Zsh (oh my zsh) Setup & Configuration #
+#########################################
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
-# Import any secrets envvars if defined in ~/.secrets.
-if [ -f "$HOME/.secrets" ]; then
-  source $HOME/.secrets
-fi
+plugins=(git ruby rails bundler heroku docker zsh-autosuggestions)
 
 # ohmyzsh theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="af-magic"
@@ -16,33 +21,15 @@ ZSH_THEME="af-magic"
 # See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git ruby rails bundler heroku docker zsh-autosuggestions)
 # https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#oh-my-zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#808080"
 
-source $ZSH/oh-my-zsh.sh
+##################
+# External Setup #
+##################
 
-# User Configuration
-
-# Linuxbrew shell-env if on Linux.
-if  [[ -x "$(command -v /home/linuxbrew/.linuxbrew/bin/brew)" ]]; then
-  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-fi
-
-# Homebrew shell-env if on MacOS.
-if [[ -x "$(command -v /opt/homebrew/bin/brew)" ]]; then
-  eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
-# Recommended by Homebrew.
-if [[ -x "$(command -v rbenv)" ]]; then
-  eval "$(rbenv init --no-rehash - zsh)"
-fi
-
-# Recommended by Homebrew.
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Import any secrets envvars if defined in ~/.secrets.
+[[ -s "$HOME/.secrets" ]] && source $HOME/.secrets && LOADED+=("secrets")
 
 # Preferred editor for local and remote sessions.
 if [[ -n $SSH_CONNECTION ]]; then
@@ -51,16 +38,42 @@ else
   export EDITOR='nvim'
 fi
 
-# Create tnt dir for tnt (trash) alias.
-if [ ! -d ~/.tnt ]; then
-  mkdir ~/.tnt
-fi
+# Linuxbrew shell-env if on Linux.
+[[ -s "/home/linuxbrew/.linuxbrew/bin/brew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)" && LOADED+=("linuxbrew")
 
+# Homebrew shell-env if on MacOS.
+[[ -s "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)" && LOADED+=("macbrew")
+
+# Recommended by Homebrew.
+[[ -n $(command -v rbenv) ]] && eval "$(rbenv init --no-rehash - zsh)" && LOADED+=("rbenv")
+
+# Recommended by Homebrew.
+export NVM_DIR="$HOME/.nvm"
+[[ -s "$NVM_DIR/nvm.sh" ]] && \. "$NVM_DIR/nvm.sh" && LOADED+=("nvm")
+
+echo -n "Loaded: "
+for i in "${LOADED[@]}"; do
+  echo -n "$i "
+done
+echo
+
+############
+# Commands #
+############
+
+# Create tnt dir for tnt (trash) alias.
+[[ ! -d $HOME/.tnt ]] && mkdir $HOME/.tnt && echo "Trash directory (~/.tnt) created."
+
+# Trashing command.
 function trash() {
   NAME="$1.$(date +"%Y-%m-%d-%H%M%S")"
   mv $1 $NAME
   mv $NAME ~/.tnt
 }
+
+###########
+# Aliases #
+###########
 
 # Aliases - Personal
 alias tmuxdev="tmux split-window -h && tmux split-window && tmux resize-pane -R 30 && tmux select-pane -L && tmux rename-window DEVELOPMENT"
