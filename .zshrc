@@ -36,7 +36,7 @@ fi
 
 # Recommended by Homebrew.
 if [[ -x "$(command -v rbenv)" ]]; then
-  eval "$(rbenv init - --no-rehash)"
+  eval "$(rbenv init --no-rehash - zsh)"
 fi
 
 # Recommended by Homebrew.
