@@ -27,6 +27,7 @@ vim.o.cursorline = true -- Highline line of cursor.
 vim.o.regexpengine = 1 -- Use old regex engine, which can boost performance.
 vim.o.termguicolors = true -- Use true colors rather than what $TERM supports.
 vim.o.wrap = false -- Do not wrap overflowing lines to next line.
+vim.o.mouse = '' -- Disable mouse.
 -- Really slow: vim.o.shellcmdflag = '-ic' -- Set flags when invoking shell inside vim to act as 'interactive', which prompts bash/zsh to load .rc files (supports aliases).
 vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
 vim.cmd('color PaperColor') -- Set the color scheme.
