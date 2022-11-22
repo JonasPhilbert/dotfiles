@@ -82,6 +82,8 @@ alias islands="cd ~/git/islands"
 alias servers="lsof -iTCP -sTCP:LISTEN -n -P"
 alias notes="$EDITOR ~/NOTES.md"
 alias rm="echo You should probably use 'trash' instead. To override, use full bin path: '/bin/rm'."
+alias rawsomnia="cd ~/.config/insomnia && git pull && INSOMNIA_DATA_PATH=~/.config/insomnia /Applications/Insomnia.app/Contents/MacOS/Insomnia && git commit -am :robot: && git push"
+alias insomnia="tmux new-session -s insomnia -d 'cd ~/.config/insomnia && git pull && INSOMNIA_DATA_PATH=~/.config/insomnia /Applications/Insomnia.app/Contents/MacOS/Insomnia && git commit -am :robot: && git push'" # Create detached tmux session, run insomnia inside it, then push changes.
 
 # Aliases - Work
 alias fl="cd ~/git/flightlogger"
