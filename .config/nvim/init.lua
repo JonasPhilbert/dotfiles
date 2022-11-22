@@ -36,9 +36,6 @@ vim.g.mapleader = ' ' -- Leader key is space.
 
 local nore_silent = { noremap = true, silent = true }
 
--- Command to trash current file: :Rm
-vim.cmd([[command! Rm :call system('zsh -c "trash %"') | bd]])
-
 -- Command to rename current file: :Rename new_name.foo
 vim.cmd([[command! -nargs=1 Rename saveas <args> | call delete(expand('#')) | bd #]])
 
@@ -178,7 +175,7 @@ require('packer').startup(function(use)
   -- YAML tooling.
   use 'cuducos/yaml.nvim'
 
-  -- Cycle though case styles (snake_case, camelCase) using tilde (~).
+  -- Cycle though case styles (snake_case, camelCase) using tilde (~) by default. Overwritten to (z).
   use 'icatalina/vim-case-change'
   vim.g.casechange_nomap = 1
   vim.keymap.set('v', 'z', '"zc<C-R>=casechange#next(@z)<CR><Esc>v`[', { noremap = true }) -- Default bind is tilde, but tilde sucks on nordic keyboards. Override bind to "z".
