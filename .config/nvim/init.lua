@@ -14,10 +14,9 @@ vim.o.relativenumber = true -- Show relative line numbers.
 vim.o.ignorecase = true -- Cases are ignored while searching with /.
 vim.o.smartcase = true -- Searching with / will be case-insensitive until a capital letter is introduced.
 vim.o.swapfile = false -- Do not create swapfiles.
-vim.o.undofile = true -- Keep a history of undos in a file.
 vim.o.backup = false -- Create no backup files. Think this isn't critical because we set undo files.
-vim.o.undodir = '~/.vim_undodir' -- The directory in which to place undo files. ⚠️  This directory will not be created by vim.
-os.execute('mkdir ~/.vim_undodir') -- Let's just ensure it exists.
+vim.o.undodir = vim.fn.stdpath('config') .. '/undo' -- The directory in which to place undo files.
+vim.o.undofile = true -- Keep a history of undos in a file.
 vim.o.incsearch = true -- Searching with / will continually show and highlight results.
 vim.o.hlsearch = true -- Search matches are highlighted.
 vim.o.ttimeoutlen = 0 -- Key code timeouts are instant, causing ESC to be more responsive, but disallows its use in sequences.
