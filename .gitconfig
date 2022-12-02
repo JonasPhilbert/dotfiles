@@ -18,3 +18,4 @@
 [alias]
   undo = reset --soft HEAD~1
   wip = commit -a -m WIP --no-verify
+  fix = commit --amend --no-edit
