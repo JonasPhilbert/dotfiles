@@ -276,6 +276,7 @@ lspconfig['cmake'].setup({ capabilities = capabilities })
 lspconfig['gopls'].setup({ capabilities = capabilities })
 lspconfig['dockerls'].setup({ capabilities = capabilities })
 lspconfig['yamlls'].setup({ capabilities = capabilities })
+lspconfig['rust_analyzer'].setup({ capabilities = capabilities })
 
 -- Hardmode >:D
 local illegalKeys = { '<Up>', '<Down>', '<Left>', '<Right>' }
