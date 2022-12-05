@@ -127,7 +127,7 @@ require('packer').startup(function(use)
   vim.cmd("command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)") -- https://github.com/junegunn/fzf.vim/issues/346#issuecomment-655446292
   vim.cmd("command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)") -- Use <:Rag 'query' path> to search for ag matches in specific folder
   vim.keymap.set('n', '<leader><space>', ':Buffers<CR>', nore_silent)
-  vim.keymap.set('n', '<leader>f', ':GFiles<CR>', nore_silent)
+  vim.keymap.set('n', '<leader>f', ':GFiles --cached --others --exclude-standard<CR>', nore_silent)
   vim.keymap.set('n', '<leader>F', ':Ag<CR>', nore_silent)
   vim.keymap.set('v', '<leader>F', 'y:Ag <c-r>0<CR>', nore_silent)
 
