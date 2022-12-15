@@ -35,9 +35,6 @@ vim.g.mapleader = ' ' -- Leader key is space.
 
 local nore_silent = { noremap = true, silent = true }
 
--- Command to rename current file: :Rename new_name.foo
-vim.cmd([[command! -nargs=1 Rename saveas <args> | call delete(expand('#')) | bd #]])
-
 -- Switch to last used buffer using backspace.
 vim.keymap.set('n', '<BS>', '<C-^><CR>', nore_silent)
 
@@ -79,7 +76,6 @@ command! Rc if bufname('%') =~# '\.config\/nvim\/init.lua' | source % |
 
 -- Rename current file command: :Rename new_name.md
 vim.cmd("command! -nargs=1 Rename saveas %:h/<args> | call delete(expand('#')) | bd #")
--- vim.cmd("command! -nargs=1 Rename saveas %:h/<args>")
 
 -- Plugin manager: https://github.com/wbthomason/packer.nvim#quickstart
 require('packer').startup(function(use)
