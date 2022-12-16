@@ -71,6 +71,18 @@ function trash() {
   mv $NAME ~/.tnt
 }
 
+# Postmaster command.
+# When retarting, postgres sometimes won't delete the .pid file and complain when booting again. I always forget how to fix it, so now this:
+function postmaster-fix() {
+  if [[ $(tail -1 /opt/homebrew/var/log/postgresql* | grep postmaster.pid) ]]; then
+    trash /opt/homebrew/var/postgres/postmaster.pid
+    echo "Postmaster.pid trashed. Restarting postgres."
+    brew services restart postgresql
+  else
+    echo "No postmaster.pid error found in postgres log."
+  fi
+}
+
 ###########
 # Aliases #
 ###########
