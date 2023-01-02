@@ -30,6 +30,7 @@ vim.o.mouse = '' -- Disable mouse.
 -- Really slow: vim.o.shellcmdflag = '-ic' -- Set flags when invoking shell inside vim to act as 'interactive', which prompts bash/zsh to load .rc files (supports aliases).
 vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
 vim.cmd('color PaperColor') -- Set the color scheme.
+vim.cmd('packadd cfilter') -- Add :Cfilter command to filter qflist.
 
 vim.g.mapleader = ' ' -- Leader key is space.
 
