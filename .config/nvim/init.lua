@@ -114,18 +114,12 @@ require('packer').startup(function(use)
   }
 
   -- Fuzzy file finder.
-  use {
-    'junegunn/fzf.vim',
-    run = 'brew install bat',
-    requires = {{'junegunn/fzf'}},
-  }
-  vim.g.fzf_layout = { window = { width = 1, height = 1 } } -- FZF window fill entire screen.
-  vim.cmd("command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}), <bang>0)") -- https://github.com/junegunn/fzf.vim/issues/346#issuecomment-655446292
-  vim.cmd("command! -bang -nargs=+ -complete=dir Rag call fzf#vim#ag_raw(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)") -- Use <:Rag 'query' path> to search for ag matches in specific folder
-  vim.keymap.set('n', '<leader><space>', ':Buffers<CR>', nore_silent)
-  vim.keymap.set('n', '<leader>f', ':GFiles --cached --others --exclude-standard<CR>', nore_silent)
-  vim.keymap.set('n', '<leader>F', ':Ag<CR>', nore_silent)
-  vim.keymap.set('v', '<leader>F', 'y:Ag <c-r>0<CR>', nore_silent)
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
+  local builtin = require('telescope.builtin')
+  vim.keymap.set('n', '<leader><space>', builtin.buffers, {})
+  vim.keymap.set('n', '<leader>f', builtin.find_files, {})
+  vim.keymap.set('n', '<leader>F', builtin.live_grep, {})
+  vim.keymap.set('n', '<leader>B', builtin.git_branches, {})
 
   -- Change surrounding delimiter with cs<d><d> (eg. cs"{ )
   use 'tpope/vim-surround'
@@ -144,10 +138,6 @@ require('packer').startup(function(use)
   -- Undo steps manager and overview.
   use 'mbbill/undotree'
   vim.keymap.set('n', '<leader>U', ':UndotreeToggle<CR>:UndotreeFocus<CR>', nore_silent)
-
-  -- FZF for git branches.
-  use 'stsewd/fzf-checkout.vim'
-  vim.keymap.set('n', '<leader>B', ':GBranches!<CR>', { noremap = true })
 
   -- Hex color highlights in code.
   use 'lilydjwg/colorizer'
@@ -186,6 +176,17 @@ end)
 
 -- Leap (searching) setup.
 require('leap').add_default_mappings()
+
+-- Telescope (fuzzy finder) setup.
+require('telescope').setup({
+  defaults = {
+    layout_strategy = 'flex',
+    layout_config = {
+      height = 0.95,
+      width = 0.95,
+    },
+  },
+})
 
 -- Status line (lualine) setup.
 require('lualine').setup({
