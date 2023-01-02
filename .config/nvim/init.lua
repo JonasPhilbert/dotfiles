@@ -144,11 +144,6 @@ require('packer').startup(function(use)
   use 'lilydjwg/colorizer'
   vim.g.colorizer_maxlines = 1000 -- Important for performance. Really slow in large buffers, so limit to 1k lines.
 
-  -- I18n tooling.
-  use 'airblade/vim-localorie'
-  vim.keymap.set('n', '<leader>lt', ':call localorie#translate()<CR>', { noremap = true })
-  vim.keymap.set('n', '<leader>le', ':echo localorie#expand_key()<CR>', { noremap = true })
-
   -- Paranthesis autocomplete and other goodies.
   use 'tmsvg/pear-tree'
 
