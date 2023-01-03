@@ -96,7 +96,7 @@ require('packer').startup(function(use)
   use 'hrsh7th/vim-vsnip'
   
   -- Treesitter for better syntax highlighting.
-  -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   
   -- Status line.
   use { 'nvim-lualine/lualine.nvim' }
@@ -197,16 +197,16 @@ require('lualine').setup({
 })
 
 -- Treesitter setup.
--- require('nvim-treesitter.configs').setup({
---   ensure_installed = { 'lua', 'ruby', 'typescript', 'tsx', 'javascript', 'yaml', 'json' },
---   auto_install = true,
---   highlight = {
---     enable = true,
---   },
---   indent = {
---     enable = true,
---   },
--- })
+require('nvim-treesitter.configs').setup({
+  ensure_installed = { 'vim', 'lua', 'ruby', 'typescript', 'tsx', 'javascript', 'yaml', 'json', 'graphql', 'go', 'gomod', 'rust' },
+  auto_install = true,
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  },
+})
 
 -- Mason setup.
 require('mason').setup()
