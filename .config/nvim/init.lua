@@ -23,17 +23,14 @@ vim.o.ttimeoutlen = 0 -- Key code timeouts are instant, causing ESC to be more r
 vim.o.scrolloff = 5 -- Amount of lines to show at the bottom/top of screen when nearing edge.
 vim.o.clipboard = 'unnamedplus' -- Use system clipboard for yanks.
 vim.o.cursorline = true -- Highline line of cursor.
-vim.o.regexpengine = 1 -- Use old regex engine, which can boost performance.
 vim.o.termguicolors = true -- Use true colors rather than what $TERM supports.
 vim.o.wrap = false -- Do not wrap overflowing lines to next line.
 vim.o.mouse = '' -- Disable mouse.
--- Really slow: vim.o.shellcmdflag = '-ic' -- Set flags when invoking shell inside vim to act as 'interactive', which prompts bash/zsh to load .rc files (supports aliases).
 vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
-vim.cmd('color PaperColor') -- Set the color scheme.
 vim.cmd('packadd cfilter') -- Add :Cfilter command to filter qflist.
 
 vim.g.mapleader = ' ' -- Leader key is space.
-
+ 
 local nore_silent = { noremap = true, silent = true }
 
 -- Switch to last used buffer (alternate) using backspace.
@@ -57,17 +54,6 @@ vim.keymap.set('n', '<leader>L', ':cnewer<CR>', nore_silent)
 -- Search for string when selected in visual mode mapping.
 vim.keymap.set('v', '<leader>f', 'y/<c-r>0', { noremap = true })
 
--- File explorer mapping.
-vim.keymap.set('n', '<leader>A', ':Dirvish<cr>', nore_silent)
-
--- LSP mapping. For completion, see cmp package and setup thereof.
-vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true })
-vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true })
-vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { noremap = true })
-vim.keymap.set('n', '<leader>aa', vim.lsp.buf.code_action, { noremap = true })
-vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, { noremap = true })
-vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
-
 -- .vimrc command to edit or source.
 vim.cmd([[
 command! Rc if bufname('%') =~# '\.config\/nvim\/init.lua' | source % |
@@ -83,20 +69,24 @@ require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  -- Color schemes.
-  use 'tomasr/molokai'
-  use 'w0ng/vim-hybrid'
+  -- Color theme.
   use 'NLKNguyen/papercolor-theme'
-
-  -- Configurations for Nvim LSP. Esentially just allows LSP to work.
+  
+  -- Configurations for language servers.
   use 'neovim/nvim-lspconfig'
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true })
+  vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true })
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { noremap = true })
+  vim.keymap.set('n', '<leader>aa', vim.lsp.buf.code_action, { noremap = true })
+  vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, { noremap = true })
+  vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
 
   -- Installation helper for LSP servers and more.
   use "williamboman/mason.nvim"
-
-  -- Autocomplete popup framwork thingy.
+  
+  -- Presents LSP autocompletion results in a nice popup.
   use 'hrsh7th/nvim-cmp'
-  -- Cmp autocompletion sources:
+  -- Sources for cmp completions.
   use 'hrsh7th/cmp-nvim-lsp' -- Get autocompletions from LSP.
   use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-buffer'
@@ -104,15 +94,12 @@ require('packer').startup(function(use)
   -- Cmp snippet engine:
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
-
+  
   -- Treesitter for better syntax highlighting.
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
+  -- use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  
   -- Status line.
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use { 'nvim-lualine/lualine.nvim' }
 
   -- Fuzzy file finder.
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
@@ -124,7 +111,7 @@ require('packer').startup(function(use)
 
   -- Change surrounding delimiter with cs<d><d> (eg. cs"{ )
   use 'tpope/vim-surround'
-
+  
   -- Git client using :G <command> (eg. :G rebase -i )
   use 'tpope/vim-fugitive'
   vim.keymap.set('n', '<leader>g', ':G<space>', { noremap = true })
@@ -139,23 +126,24 @@ require('packer').startup(function(use)
   -- Undo steps manager and overview.
   use 'mbbill/undotree'
   vim.keymap.set('n', '<leader>U', ':UndotreeToggle<CR>:UndotreeFocus<CR>', nore_silent)
-
+  
   -- Hex color highlights in code.
   use 'lilydjwg/colorizer'
   vim.g.colorizer_maxlines = 1000 -- Important for performance. Really slow in large buffers, so limit to 1k lines.
-
+  
   -- Paranthesis autocomplete and other goodies.
   use 'tmsvg/pear-tree'
-
-  -- File explorer.
+  vim.g.pear_tree_ft_disabled = { 'TelescopePrompt' } -- Disabled pear-tree in Telecsope popup, which would otherwise cause <CR> in Telescope insert mode to misbehave.
+  
+  -- File explorer. Use '-' to open buffer parent folder.
   use 'justinmk/vim-dirvish'
-
+  
   -- Sneak-like leaping/searching through all splits.
   use 'ggandor/leap.nvim'
-
+  
   -- YAML tooling.
   use 'cuducos/yaml.nvim'
-
+  
   -- Cycle though case styles (snake_case, camelCase) using tilde (~) by default. Overwritten to (z).
   use 'icatalina/vim-case-change'
   vim.g.casechange_nomap = 1
@@ -170,9 +158,6 @@ require('packer').startup(function(use)
   use 'jparise/vim-graphql' -- Syntax highlighting, indentation.
 end)
 
--- Leap (searching) setup.
-require('leap').add_default_mappings()
-
 -- Telescope (fuzzy finder) setup.
 require('telescope').setup({
   defaults = {
@@ -182,7 +167,16 @@ require('telescope').setup({
       width = 0.95,
     },
   },
+  pickers = {
+    buffers = {
+      ignore_current_buffer = true, -- Do not show current buffer in buffer telescope.
+      sort_mru = true, -- Sorts the buffer telescope by mru (most recently used).
+    },
+  },
 })
+
+-- Leap (searching) setup.
+require('leap').add_default_mappings()
 
 -- Status line (lualine) setup.
 require('lualine').setup({
@@ -203,17 +197,16 @@ require('lualine').setup({
 })
 
 -- Treesitter setup.
-require('nvim-treesitter.configs').setup({
-  ensure_installed = { 'lua', 'ruby', 'typescript', 'tsx', 'javascript', 'yaml', 'json' },
-  auto_install = true,
-  highlight = {
-    enable = true,
-    --additional_vim_regex_highlighting = { 'fugitive' }, -- Do not run native vim syntax highlighting, use treesitter only. (annoying in fugitive)
-  },
-  indent = {
-    enable = true,
-  },
-})
+-- require('nvim-treesitter.configs').setup({
+--   ensure_installed = { 'lua', 'ruby', 'typescript', 'tsx', 'javascript', 'yaml', 'json' },
+--   auto_install = true,
+--   highlight = {
+--     enable = true,
+--   },
+--   indent = {
+--     enable = true,
+--   },
+-- })
 
 -- Mason setup.
 require('mason').setup()
@@ -276,3 +269,5 @@ for i = 1, 4 do
   vim.keymap.set('n', illegalKeys[i], '<Nop>', { noremap = true })
   vim.keymap.set('i', illegalKeys[i], '<Nop>', { noremap = true })
 end
+
+vim.cmd('color PaperColor') -- Set the color scheme.
