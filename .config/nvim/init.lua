@@ -257,7 +257,7 @@ cmp.setup({
   })
 })
 
-lspconfig['tsserver'].setup({ capabilities = capabilities })
+lspconfig['tsserver'].setup({ init_options = { preferences = { importModuleSpecifierPreference = 'relative' } }, capabilities = capabilities })
 lspconfig['solargraph'].setup({ capabilities = capabilities })
 lspconfig['cssls'].setup({ capabilities = capabilities })
 lspconfig['clangd'].setup({ capabilities = capabilities })
