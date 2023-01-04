@@ -104,10 +104,11 @@ require('packer').startup(function(use)
   -- Fuzzy file finder.
   use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { {'nvim-lua/plenary.nvim'} } }
   local builtin = require('telescope.builtin')
-  vim.keymap.set('n', '<leader><space>', builtin.buffers, {})
-  vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-  vim.keymap.set('n', '<leader>F', builtin.live_grep, {})
-  vim.keymap.set('n', '<leader>B', builtin.git_branches, {})
+  vim.keymap.set('n', '<leader><space>', builtin.buffers, nore_silent)
+  vim.keymap.set('n', '<leader>f', builtin.find_files, nore_silent)
+  vim.keymap.set('n', '<leader>F', builtin.live_grep, nore_silent)
+  vim.keymap.set('v', '<leader>F', '"zy:Telescope grep_string default_text=<C-r>z<CR>', nore_silent)
+  vim.keymap.set('n', '<leader>B', builtin.git_branches, nore_silent)
 
   -- Change surrounding delimiter with cs<d><d> (eg. cs"{ )
   use 'tpope/vim-surround'
@@ -168,6 +169,9 @@ require('telescope').setup({
     },
   },
   pickers = {
+    grep_string = {
+      only_sort_text = true,
+    },
     buffers = {
       ignore_current_buffer = true, -- Do not show current buffer in buffer telescope.
       sort_mru = true, -- Sorts the buffer telescope by mru (most recently used).
