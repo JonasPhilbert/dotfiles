@@ -160,12 +160,21 @@ require('packer').startup(function(use)
 end)
 
 -- Telescope (fuzzy finder) setup.
+local actions = require('telescope.actions')
 require('telescope').setup({
   defaults = {
     layout_strategy = 'flex',
     layout_config = {
       height = 0.95,
       width = 0.95,
+    },
+    mappings = {
+      i = {
+        ['<C-Q>'] = actions.smart_send_to_qflist + actions.open_qflist,
+      },
+      n = {
+        ['<C-Q>'] = actions.smart_send_to_qflist + actions.open_qflist,
+      },
     },
   },
   pickers = {
