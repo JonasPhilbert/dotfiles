@@ -57,6 +57,12 @@ for i in "${LOADED[@]}"; do
 done
 echo
 
+#########################
+# Environment Variables #
+#########################
+
+export NODE_OPTIONS=--max_old_space_size=4096
+
 ############
 # Commands #
 ############
