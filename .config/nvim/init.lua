@@ -81,6 +81,11 @@ require('packer').startup(function(use)
   vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, { noremap = true })
   vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
 
+  -- Display possible key stroke when starting a key sequence.
+  use { 'folke/which-key.nvim', config = function()
+    require('which-key').setup({})
+  end }
+
   -- Installation helper for LSP servers and more.
   use {
     'williamboman/mason.nvim',
