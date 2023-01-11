@@ -82,7 +82,12 @@ require('packer').startup(function(use)
   vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
 
   -- Installation helper for LSP servers and more.
-  use "williamboman/mason.nvim"
+  use {
+    'williamboman/mason.nvim',
+    config = function()
+      require('mason').setup()
+    end
+  }
   
   -- Presents LSP autocompletion results in a nice popup.
   use 'hrsh7th/nvim-cmp'
@@ -225,9 +230,6 @@ require('nvim-treesitter.configs').setup({
     enable = true,
   },
 })
-
--- Mason setup.
-require('mason').setup()
 
 -- LSP and completion (cmp) setup.
 local lspconfig = require('lspconfig')
