@@ -110,6 +110,9 @@ require('packer').startup(function(use)
   vim.keymap.set('v', '<leader>F', '"zy:Telescope grep_string default_text=<C-r>z<CR>', nore_silent)
   vim.keymap.set('n', '<leader>B', builtin.git_branches, nore_silent)
 
+  -- Fuzzy sorter for Telescope. Natively built for performance.
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+
   -- Change surrounding delimiter with cs<d><d> (eg. cs"{ )
   use 'tpope/vim-surround'
   
@@ -184,6 +187,14 @@ require('telescope').setup({
     buffers = {
       ignore_current_buffer = true, -- Do not show current buffer in buffer telescope.
       sort_mru = true, -- Sorts the buffer telescope by mru (most recently used).
+    },
+  },
+  extensions = {
+    fzf = {
+      fuzzy = true, -- If false will only do exact matching.
+      override_generic_sorter = true, -- Override the generic sorter.
+      override_file_sorter = true, -- Override the file sorter.
+      case_mode = "smart_case", -- Or "ignore_case" or "respect_case"
     },
   },
 })
