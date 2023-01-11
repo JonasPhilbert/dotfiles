@@ -142,9 +142,6 @@ require('packer').startup(function(use)
   -- File explorer. Use '-' to open buffer parent folder.
   use 'justinmk/vim-dirvish'
   
-  -- Sneak-like leaping/searching through all splits.
-  use 'ggandor/leap.nvim'
-  
   -- YAML tooling.
   use 'cuducos/yaml.nvim'
   
@@ -198,9 +195,6 @@ require('telescope').setup({
     },
   },
 })
-
--- Leap (searching) setup.
-require('leap').add_default_mappings()
 
 -- Status line (lualine) setup.
 require('lualine').setup({
