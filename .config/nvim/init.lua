@@ -282,10 +282,9 @@ lspconfig['yamlls'].setup({ capabilities = capabilities })
 lspconfig['rust_analyzer'].setup({ capabilities = capabilities })
 
 -- Hardmode >:D
-local illegalKeys = { '<Up>', '<Down>', '<Left>', '<Right>' }
-for i = 1, 4 do
-  vim.keymap.set('n', illegalKeys[i], '<Nop>', { noremap = true })
-  vim.keymap.set('i', illegalKeys[i], '<Nop>', { noremap = true })
+for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
+  vim.keymap.set('n', key, ':echo "No. Stop."<CR>', { noremap = true })
+  vim.keymap.set('i', key, ':echo "No. Stop."<CR>', { noremap = true })
 end
 
 vim.cmd('color PaperColor') -- Set the color scheme.
