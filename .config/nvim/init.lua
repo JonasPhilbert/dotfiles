@@ -73,17 +73,6 @@ require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
   
-  -- Presents LSP autocompletion results in a nice popup.
-  use 'hrsh7th/nvim-cmp'
-  -- Sources for cmp completions.
-  use 'hrsh7th/cmp-nvim-lsp' -- Get autocompletions from LSP.
-  use 'hrsh7th/cmp-nvim-lua'
-  use 'hrsh7th/cmp-buffer'
-  use 'hrsh7th/cmp-path'
-  -- Cmp snippet engine:
-  use 'hrsh7th/cmp-vsnip'
-  use 'hrsh7th/vim-vsnip'
-  
   -- Language support.
   use 'vim-ruby/vim-ruby' -- Syntax highlighting, indentation.
   use 'tpope/vim-rails' -- Syntax highlighting, identation, commands, go to file ( gf )
@@ -117,6 +106,21 @@ require('packer').startup(function(use)
     vim.keymap.set('n', '<leader>aa', vim.lsp.buf.code_action, { noremap = true })
     vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, { noremap = true })
     vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
+    local lspconfig = require('lspconfig')
+    lspconfig['tsserver'].setup({ init_options = { preferences = { importModuleSpecifierPreference = 'relative' } }, capabilities = capabilities })
+    lspconfig['solargraph'].setup({ capabilities = capabilities })
+    lspconfig['cssls'].setup({ capabilities = capabilities })
+    lspconfig['clangd'].setup({ capabilities = capabilities })
+    lspconfig['cmake'].setup({ capabilities = capabilities })
+    lspconfig['gopls'].setup({ capabilities = capabilities })
+    lspconfig['dockerls'].setup({ capabilities = capabilities })
+    lspconfig['yamlls'].setup({ capabilities = capabilities })
+    lspconfig['rust_analyzer'].setup({ capabilities = capabilities })
+  end }
+
+  -- Completion popup.
+  use { 'echasnovski/mini.completion', config = function() 
+    require('mini.completion').setup()
   end }
 
   -- Commenting plugin. Use <leader>cc to comment lines.
@@ -257,56 +261,3 @@ require('packer').startup(function(use)
     vim.keymap.set('v', 'z', '"zc<C-R>=casechange#next(@z)<CR><Esc>v`[', { noremap = true }) -- Default bind is tilde, but tilde sucks on nordic keyboards. Override bind to "z".
   end }
 end)
--- End of plugin management.
-
--- LSP and completion engine (cmp) setup.
-local lspconfig = require('lspconfig')
-local cmp = require('cmp')
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
-cmp.setup({
-  snippet = {
-    expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
-    end
-  },
-  window = {
-    completion = cmp.config.window.bordered(),
-    documentation = cmp.config.window.bordered(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ['<C-c>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    ['<Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      else
-        fallback()
-      end
-    end,
-    ['<S-Tab>'] = function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end,
-  }),
-  sources = cmp.config.sources({
-    { name = 'nvim_lua' },
-    { name = 'nvim_lsp' },
-    { name = 'buffer' },
-    { name = 'path' },
-  })
-})
-
-lspconfig['tsserver'].setup({ init_options = { preferences = { importModuleSpecifierPreference = 'relative' } }, capabilities = capabilities })
-lspconfig['solargraph'].setup({ capabilities = capabilities })
-lspconfig['cssls'].setup({ capabilities = capabilities })
-lspconfig['clangd'].setup({ capabilities = capabilities })
-lspconfig['cmake'].setup({ capabilities = capabilities })
-lspconfig['gopls'].setup({ capabilities = capabilities })
-lspconfig['dockerls'].setup({ capabilities = capabilities })
-lspconfig['yamlls'].setup({ capabilities = capabilities })
-lspconfig['rust_analyzer'].setup({ capabilities = capabilities })
