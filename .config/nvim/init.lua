@@ -119,6 +119,20 @@ require('packer').startup(function(use)
     vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
   end }
 
+  -- Commenting plugin. Use <leader>cc to comment lines.
+  use { 'numToStr/Comment.nvim', config = function()
+    require('Comment').setup({
+      toggler = {
+        line = '<leader>cc',
+        block = '<leader>bc',
+      },
+      opleader = {
+        line = '<leader>cc',
+        block = '<leader>bc',
+      },
+    })
+  end }
+
   -- Highlight word under cursor.
   use { 'yamatsum/nvim-cursorline', config = function() 
     require('nvim-cursorline').setup({
@@ -220,14 +234,6 @@ require('packer').startup(function(use)
   -- Git client using :G <command> (eg. :G rebase -i )
   use { 'tpope/vim-fugitive', config = function()
     vim.keymap.set('n', '<leader>g', ':G<space>', { noremap = true })
-  end }
-
-  -- Toggle code comments using cc (or with motion: 2cc )
-  use { 'scrooloose/nerdcommenter', config = function()
-    vim.g.NERDCreateDefaultMappings = 1
-    vim.g.NERDSpaceDelims = 1
-    vim.g.NERDCommentEmptyLines = 1
-    vim.g.NERDDefaultAlign = 'left'
   end }
 
   -- Undo steps manager and overview.
