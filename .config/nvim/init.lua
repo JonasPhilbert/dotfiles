@@ -149,19 +149,6 @@ require('packer').startup(function(use)
     })
   end }
 
-  -- Shade windows not in focus.
-  use { 'sunjon/shade.nvim', config = function()
-    require('shade').setup({
-      overlay_opacity = 70,
-      opacity_step = 1,
-      keys = {
-        brightness_up = '<C-Up>',
-        brightness_down = '<C-Down>',
-        toggle = '<Leader>s',
-      }
-    })
-  end }
-
   -- Display possible key stroke when starting a key sequence.
   use { 'folke/which-key.nvim', config = function()
     require('which-key').setup({})
