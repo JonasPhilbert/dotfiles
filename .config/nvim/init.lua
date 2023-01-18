@@ -33,8 +33,8 @@ local nore_silent = { noremap = true, silent = true }
 
 -- Hardmode >:D
 for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
-  vim.keymap.set('n', key, ':echo "No. Stop."<CR>', { noremap = true })
-  vim.keymap.set('i', key, ':echo "No. Stop."<CR>', { noremap = true })
+  vim.keymap.set('n', key, '<Nop>', { noremap = true })
+  vim.keymap.set('i', key, '<Nop>', { noremap = true })
 end
 
 -- Window naviagtion.
