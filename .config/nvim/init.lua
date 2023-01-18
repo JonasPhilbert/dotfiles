@@ -165,7 +165,7 @@ require('packer').startup(function(use)
   -- Treesitter for better syntax highlighting.
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = function()
     require('nvim-treesitter.configs').setup({
-      ensure_installed = { 'vim', 'lua', 'ruby', 'typescript', 'tsx', 'javascript', 'yaml', 'json', 'graphql', 'go', 'gomod', 'rust' },
+      ensure_installed = { 'vim', 'lua', 'ruby', 'typescript', 'tsx', 'javascript', 'yaml', 'json', 'graphql', 'go', 'gomod', 'rust', 'fish' },
       auto_install = true,
       highlight = { enable = true },
       indent = { enable = true },
