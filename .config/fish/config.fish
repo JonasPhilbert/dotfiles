@@ -5,6 +5,7 @@ if test -e ~/.secrets
 end
 
 set -gx EDITOR nvim
+set -gx NODE_OPTIONS --max_old_space_size=4096
 
 eval (/opt/homebrew/bin/brew shellenv)
 
