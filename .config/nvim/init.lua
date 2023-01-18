@@ -205,15 +205,15 @@ require('packer').startup(function(use)
     require('telescope').setup({
       defaults = {
         layout_strategy = 'flex',
-        layout_config = { height = 0.95, width = 0.95 },
+        layout_config = { height = 0.95, width = 0.95 }, -- Make prompt fill (almost) entire screen.
         mappings = {
-          i = { ['<C-Q>'] = actions.smart_send_to_qflist + actions.open_qflist },
-          n = { ['<C-Q>'] = actions.smart_send_to_qflist + actions.open_qflist },
+          i = { ['<C-Q>'] = actions.smart_send_to_qflist + actions.open_qflist }, -- Remap <C-Q> to send selections (or everything if none selected) to qf-list and then open it.
+          n = { ['<C-Q>'] = actions.smart_send_to_qflist + actions.open_qflist }, -- Same for normal mode.
         },
       },
       pickers = {
         grep_string = { only_sort_text = true }, -- Do not use prompt to filter filenames, only file content.
-        live_grep = { only_sort_text = true },
+        live_grep = { only_sort_text = true }, -- Same for live_grep.
         buffers = {
           ignore_current_buffer = true, -- Do not show current buffer in buffer telescope.
           sort_mru = true, -- Sorts the buffer telescope by mru (most recently used).
