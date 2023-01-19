@@ -1,6 +1,6 @@
 # dotfiles
 
-dotfiles for my own personal use.
+.files for my own personal use.
 
 Starting from a fresh machine? Consider `startup.sh`:
 ```bash
