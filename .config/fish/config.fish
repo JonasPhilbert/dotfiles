@@ -4,6 +4,7 @@ end
 
 set -gx EDITOR nvim
 set -gx NODE_OPTIONS --max_old_space_size=4096
+set -gx NODE_OPTIONS --openssl-legacy-provider $NODE_OPTIONS
 
 eval (/opt/homebrew/bin/brew shellenv)
 
