@@ -20,3 +20,9 @@ brew install neovim
 brew install tmux
 brew install ripgrep
 brew install fzf
+
+echo 'Setup complete. Further steps to consider:'
+echo '  1) Set default shell to fish using chsh.'
+echo '  2) Start nvim and run :PackerSync to install packages and initialize.'
+echo '  3) Move/copy .secrets from another machine.'
+echo '  4) Download and install other environment-specific packages.'
