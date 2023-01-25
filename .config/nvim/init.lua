@@ -100,8 +100,6 @@ require('packer').startup(function(use)
   
   -- Configurations for language servers.
   use { 'neovim/nvim-lspconfig', config = function()
-    vim.keymap.set('n', 'Gd', vim.lsp.buf.definition, { noremap = true })
-    vim.keymap.set('n', 'Gr', vim.lsp.buf.references, { noremap = true })
     vim.keymap.set('n', '<leader>aa', vim.lsp.buf.code_action, { noremap = true })
     vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, { noremap = true })
     vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
