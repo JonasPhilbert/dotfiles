@@ -2,7 +2,7 @@
 status --is-interactive; and rbenv init - fish | source
 
 # Aliases
-alias fl="cd ~/git/flightlogger"
+alias fl="cd ~/git/flightlogger && nvm install -s"
 alias rspec="bundle exec rspec"
 alias rake="bundle exec rake"
 alias prw="gh pr view --web"
