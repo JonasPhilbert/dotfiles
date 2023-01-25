@@ -100,9 +100,8 @@ require('packer').startup(function(use)
   
   -- Configurations for language servers.
   use { 'neovim/nvim-lspconfig', config = function()
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { noremap = true })
-    vim.keymap.set('n', 'gr', vim.lsp.buf.references, { noremap = true })
-    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, { noremap = true })
+    vim.keymap.set('n', 'Gd', vim.lsp.buf.definition, { noremap = true })
+    vim.keymap.set('n', 'Gr', vim.lsp.buf.references, { noremap = true })
     vim.keymap.set('n', '<leader>aa', vim.lsp.buf.code_action, { noremap = true })
     vim.keymap.set('n', '<leader>ar', vim.lsp.buf.rename, { noremap = true })
     vim.keymap.set('n', '<S-k>', vim.lsp.buf.hover, { noremap = true })
@@ -200,6 +199,8 @@ require('packer').startup(function(use)
     vim.keymap.set('n', '<leader>F', builtin.live_grep, nore_silent)
     vim.keymap.set('v', '<leader>F', '"zy:Telescope grep_string default_text=<C-r>z<CR>', nore_silent)
     vim.keymap.set('n', '<leader>B', builtin.git_branches, nore_silent)
+    vim.keymap.set('n', 'gd', builtin.lsp_definitions, { noremap = true })
+    vim.keymap.set('n', 'gr', builtin.lsp_references, { noremap = true })
 
     local actions = require('telescope.actions')
     require('telescope').setup({
