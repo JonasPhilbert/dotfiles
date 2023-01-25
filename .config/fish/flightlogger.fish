@@ -3,6 +3,8 @@ status --is-interactive; and rbenv init - fish | source
 
 # Aliases
 alias fl="cd ~/git/flightlogger"
+alias rspec="bundle exec rspec"
+alias rake="bundle exec rake"
 alias prw="gh pr view --web"
 alias insomnia="tmux new-session -s insomnia -d 'cd ~/.config/insomnia && git pull && INSOMNIA_DATA_PATH=~/.config/insomnia /Applications/Insomnia.app/Contents/MacOS/Insomnia && git commit -am :robot: && git push'" # Create detached tmux session, run insomnia inside it, then push changes.
 alias work="bin/rake jobs:work"
