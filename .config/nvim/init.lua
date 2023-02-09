@@ -246,4 +246,8 @@ require('packer').startup(function(use)
     vim.g.casechange_nomap = 1
     vim.keymap.set('v', 'z', '"zc<C-R>=casechange#next(@z)<CR><Esc>v`[', { noremap = true }) -- Default bind is tilde, but tilde sucks on nordic keyboards. Override bind to "z".
   end }
+
+  use { 'ggandor/leap.nvim', config = function() 
+    require('leap').add_default_mappings()
+  end }
 end)
