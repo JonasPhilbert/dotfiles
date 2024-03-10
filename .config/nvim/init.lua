@@ -37,6 +37,9 @@ for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
   vim.keymap.set('i', key, '<Nop>', { noremap = true })
 end
 
+-- Map ½ to end-of-line ($ by default) so as to work as expected on Windows keyboard layouts.
+vim.keymap.set('n', '½', '$', nore_silent)
+
 -- Window naviagtion.
 vim.keymap.set('n', '<leader>h', ':wincmd h<CR>', nore_silent)
 vim.keymap.set('n', '<leader>l', ':wincmd l<CR>', nore_silent)
@@ -50,7 +53,7 @@ vim.keymap.set('n', '<leader>H', ':colder<CR>', nore_silent)
 vim.keymap.set('n', '<leader>L', ':cnewer<CR>', nore_silent)
 
 -- Switch to last used buffer (alternate) using backspace.
-vim.keymap.set('n', '<BS>', '<C-^><CR>', nore_silent)
+vim.keymap.set('n', '<BS>', ':b#<CR>', nore_silent)
 
 -- Search for string when selected in visual mode mapping.
 vim.keymap.set('v', '<leader>f', 'y/<c-r>0', { noremap = true })
@@ -67,6 +70,20 @@ command! Rc if bufname('%') =~# '\.config\/nvim\/init.lua' | source % |
 
 -- Rename current file command: :Rename new_name.md
 vim.cmd("command! -nargs=1 Rename saveas %:h/<args> | call delete(expand('#')) | bd #")
+
+-- Automatically install Packer (package manager) if missing.
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
+end
+
+local packer_bootstrap = ensure_packer()
 
 -- Plugin manager: https://github.com/wbthomason/packer.nvim#quickstart
 require('packer').startup(function(use)
@@ -190,7 +207,7 @@ require('packer').startup(function(use)
   end }
 
   -- Fuzzy search prompt window for several things. Useful for fuzzy file finders. Has native ripgrep and fzf integration.
-  use { 'nvim-telescope/telescope.nvim', tag = '0.1.0', requires = { 'nvim-lua/plenary.nvim', '' }, config = function() 
+  use { 'nvim-telescope/telescope.nvim', tag = '0.1.4', requires = { 'nvim-lua/plenary.nvim', '' }, config = function() 
     local builtin = require('telescope.builtin')
     vim.keymap.set('n', '<leader><space>', builtin.buffers, nore_silent)
     vim.keymap.set('n', '<leader>f', builtin.find_files, nore_silent)
@@ -247,7 +264,8 @@ require('packer').startup(function(use)
     vim.keymap.set('v', 'z', '"zc<C-R>=casechange#next(@z)<CR><Esc>v`[', { noremap = true }) -- Default bind is tilde, but tilde sucks on nordic keyboards. Override bind to "z".
   end }
 
-  use { 'ggandor/leap.nvim', config = function() 
-    require('leap').add_default_mappings()
-  end }
+  -- Ensure packer is installed.
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
