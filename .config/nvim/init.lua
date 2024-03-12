@@ -29,12 +29,13 @@ vim.o.mouse = '' -- Disable mouse.
 vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
 vim.g.mapleader = ' ' -- Leader key is space.
  
-local nore_silent = { noremap = true, silent = true }
+-- local nore_silent = { noremap = true, silent = true }
+local nore_silent = { silent = true } -- NOTE(jpp): Testing if noremap is even needed.
 
 -- Hardmode >:D
 for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
-  vim.keymap.set('n', key, '<Nop>', { noremap = true })
-  vim.keymap.set('i', key, '<Nop>', { noremap = true })
+  vim.keymap.set('n', key, '<Nop>')
+  vim.keymap.set('i', key, '<Nop>')
 end
 
 -- Map ½ to end-of-line ($ by default) so as to work as expected on Windows keyboard layouts.
