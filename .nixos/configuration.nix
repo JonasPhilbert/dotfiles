@@ -94,6 +94,7 @@
       vlc
       handbrake
       libreoffice
+      obsidian
     ];
   };
 
