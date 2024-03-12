@@ -38,7 +38,7 @@ for _, key in pairs({ '<Up>', '<Down>', '<Left>', '<Right>' }) do
 end
 
 -- Map ½ to end-of-line ($ by default) so as to work as expected on Windows keyboard layouts.
-vim.keymap.set('n', '½', '$', nore_silent)
+vim.keymap.set({'n', 'v'}, '½', '$')
 
 -- Window naviagtion.
 vim.keymap.set('n', '<leader>h', ':wincmd h<CR>', nore_silent)
