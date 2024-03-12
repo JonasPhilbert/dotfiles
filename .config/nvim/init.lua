@@ -264,6 +264,9 @@ require('packer').startup(function(use)
     vim.keymap.set('v', 'z', '"zc<C-R>=casechange#next(@z)<CR><Esc>v`[', { noremap = true }) -- Default bind is tilde, but tilde sucks on nordic keyboards. Override bind to "z".
   end }
 
+  -- Allows writing readonly files with :SudaWrite (useful for NixOS conf.)
+  use { 'lambdalisue/suda.vim' }
+
   -- Ensure packer is installed.
   if packer_bootstrap then
     require('packer').sync()
