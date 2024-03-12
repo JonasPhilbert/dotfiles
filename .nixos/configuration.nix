@@ -124,6 +124,11 @@
     XDG_STATE_HOME  = "$HOME/.local/state";
   };
 
+  # Allow certain packages, even though they have known security issues #yolo
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0" # Required by package/obsidian
+  ];
+
   # Options for programs.
   programs.fish.enable = true;
   programs.neovim.enable = true;
