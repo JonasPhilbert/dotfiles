@@ -104,14 +104,15 @@
   environment.systemPackages = with pkgs; [
       git
       wget
-      xclip
+      xclip # Clipboard tool
       fish
       neovim
       tmux
       ripgrep
       fzf
       rclone
-      gcc13
+      gcc13 # GNU compiler collection
+      tlp # Power management
   ];
 
   # Swap caps-lock with esc key.
