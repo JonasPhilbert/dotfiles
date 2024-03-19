@@ -112,7 +112,6 @@
       fzf
       rclone
       gcc13 # GNU compiler collection
-      tlp # Power management
   ];
 
   # Swap caps-lock with esc key.
@@ -130,6 +129,10 @@
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0" # Required by package/obsidian
   ];
+
+  # Services
+  services.thermald.enable = true; # Service to help prevent CPU overheating(?)
+  services.tlp.enable = true; # Power management service.
 
   # Options for programs.
   programs.fish.enable = true;
