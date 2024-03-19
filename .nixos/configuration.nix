@@ -95,6 +95,7 @@
       handbrake
       libreoffice
       obsidian
+      telegram-desktop
     ];
   };
 
