@@ -112,6 +112,7 @@
       fzf
       rclone
       gcc13 # GNU compiler collection
+      powertop
   ];
 
   # Swap caps-lock with esc key.
