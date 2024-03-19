@@ -133,6 +133,7 @@
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
   services.tlp.enable = true; # Power management service.
+  services.power-profiles-daemon.enable = false; # Disable GNOME power management daemon, as it conflicts with tlp.
 
   # Options for programs.
   programs.fish.enable = true;
