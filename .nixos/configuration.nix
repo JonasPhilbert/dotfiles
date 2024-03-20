@@ -86,7 +86,6 @@
       vscode
       inkscape-with-extensions
       gimp
-      discord
       qbittorrent
       vlc
       handbrake
