@@ -33,14 +33,13 @@
   };
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.enable = true;
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Configure keymap in X11
   services.xserver = {
+    enable = true;
     layout = "dk";
     xkbVariant = "";
+    xkbOptions = "caps:sweapescape";
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
   };
 
   # Configure console keymap
@@ -112,9 +111,6 @@
       gcc13 # GNU compiler collection
       powertop
   ];
-
-  # Swap caps-lock with esc key.
-  services.xserver.xkbOptions = "caps:sweapescape";
 
   # Allow certain packages, even though they have known security issues #yolo
   nixpkgs.config.permittedInsecurePackages = [
