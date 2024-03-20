@@ -92,7 +92,6 @@
       libreoffice
       obsidian
       telegram-desktop
-      redshift
     ];
   };
 
@@ -110,7 +109,6 @@
       rclone
       gcc13 # GNU compiler collection
       powertop
-      geoclue2 # Location provider. Used by redshift
   ];
 
   # Allow certain packages, even though they have known security issues #yolo
@@ -120,12 +118,6 @@
 
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
-  services.tlp.enable = true; # Power management service.
-  services.power-profiles-daemon.enable = false; # Disable GNOME power management, as it conflicts with tlp.
-  services.geoclue2 = {
-    enable = true;
-    enableWifi = true;
-  };
 
   # Options for programs.
   programs.fish.enable = true;
