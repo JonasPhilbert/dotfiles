@@ -34,8 +34,8 @@
 
   # Enable the KDE (Plasma) Desktop Environment.
   services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -114,13 +114,7 @@
   ];
 
   # Swap caps-lock with esc key.
-  # services.xserver.xkbOptions = "caps:sweapescape";
-  services.interception-tools = {
-    enable = true;
-    plugins = with pkgs; [
-      interception-tools-plugins.caps2esc
-    ]; 
-  };
+  services.xserver.xkbOptions = "caps:sweapescape";
 
   # Allow certain packages, even though they have known security issues #yolo
   nixpkgs.config.permittedInsecurePackages = [
