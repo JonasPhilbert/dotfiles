@@ -92,6 +92,7 @@
       libreoffice
       obsidian
       telegram-desktop
+      redshift
     ];
   };
 
