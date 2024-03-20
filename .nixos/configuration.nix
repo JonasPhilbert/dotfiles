@@ -114,7 +114,13 @@
   ];
 
   # Swap caps-lock with esc key.
-  services.xserver.xkbOptions = "caps:sweapescape";
+  # services.xserver.xkbOptions = "caps:sweapescape";
+  services.interception-tools = {
+    enable = true;
+    plugins = with pkgs; [
+      interception-tools-plugins.caps2esc
+    ]; 
+  };
 
   # Allow certain packages, even though they have known security issues #yolo
   nixpkgs.config.permittedInsecurePackages = [
