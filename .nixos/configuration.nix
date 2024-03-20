@@ -35,9 +35,10 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # Enable the KDE (Plasma) Desktop Environment.
+services.xserver.enable = true;
+services.xserver.displayManager.sddm.enable = true;
+services.xserver.desktopManager.plasma5.enable = true;
 
   # Configure keymap in X11
   services.xserver = {
@@ -118,14 +119,6 @@
   # Swap caps-lock with esc key.
   services.xserver.xkbOptions = "caps:sweapescape";
 
-  # Envvars for GNOME to be able to find desktop application icons for nix package applications.
-  environment.sessionVariables = {
-    XDG_CACHE_HOME  = "$HOME/.cache";
-    XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME   = "$HOME/.local/share";
-    XDG_STATE_HOME  = "$HOME/.local/state";
-  };
-
   # Allow certain packages, even though they have known security issues #yolo
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0" # Required by package/obsidian
@@ -134,7 +127,6 @@
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
   services.tlp.enable = true; # Power management service.
-  services.power-profiles-daemon.enable = false; # Disable GNOME power management daemon, as it conflicts with tlp.
 
   # Options for programs.
   programs.fish.enable = true;
