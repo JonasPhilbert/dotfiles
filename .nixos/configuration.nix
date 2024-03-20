@@ -110,6 +110,7 @@
       rclone
       gcc13 # GNU compiler collection
       powertop
+      geoclue2 # Location provider. Used by redshift
   ];
 
   # Allow certain packages, even though they have known security issues #yolo
