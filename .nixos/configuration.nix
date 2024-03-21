@@ -38,7 +38,7 @@
     enable = true;
     layout = "dk";
     xkbVariant = "";
-    # xkbOptions = "caps:sweapescape";
+    xkbOptions = "caps:sweapescape";
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
@@ -93,7 +93,6 @@
       libreoffice
       obsidian
       telegram-desktop
-      redshift
     ];
   };
 
@@ -113,7 +112,7 @@
       powertop
       rustc
       cargo
-      kanata
+      # kanata
   ];
 
   location.latitude = 56.15;
@@ -126,19 +125,12 @@
 
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
-  services.kanata = {
-    enable = true;
-    keyboards = [
-      { config = "(defsrc caps) (deflayer qwerty @cap) (defalias cap (tap esc))"; }
-    ];
-  };
-  services.redshift = {
-    enable = true;
-    temperature = {
-      day = 3700; # 5500
-      night = 3700;
-    };
-  };
+  # services.kanata = {
+  #   enable = true;
+  #   keyboards = [
+  #     { config = "(defsrc caps) (deflayer qwerty @cap) (defalias cap (tap esc))"; }
+  #   ];
+  # };
 
   # Options for programs.
   programs.fish.enable = true;
