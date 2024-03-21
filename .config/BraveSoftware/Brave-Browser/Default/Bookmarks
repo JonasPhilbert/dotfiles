@@ -1,54 +1,492 @@
 {
-   "checksum": "d58ec9687535ac2fa3d022f4a49c0772",
+   "checksum": "431591476f504803546a1da8741f958d",
    "roots": {
       "bookmark_bar": {
-         "children": [  ],
-         "date_added": "13355063731945861",
+         "children": [ {
+            "children": [ {
+               "date_added": "13301659409000000",
+               "date_last_used": "0",
+               "guid": "b5799e5a-948d-4ca5-8e83-6f2aa989d84a",
+               "id": "43",
+               "name": "SimpleForm FormBuilder docs",
+               "type": "url",
+               "url": "https://rubydoc.info/github/heartcombo/simple_form/SimpleForm/FormBuilder"
+            }, {
+               "date_added": "13301659466000000",
+               "date_last_used": "0",
+               "guid": "fa5ffee9-783f-4559-8e1f-df0c2748b5eb",
+               "id": "44",
+               "name": "Flex",
+               "type": "url",
+               "url": "https://css-tricks.com/snippets/css/a-guide-to-flexbox/"
+            }, {
+               "date_added": "13307096086000000",
+               "date_last_used": "0",
+               "guid": "75cec781-e883-4c6f-9c62-8c99bf7badec",
+               "id": "45",
+               "name": "Term Colors",
+               "type": "url",
+               "url": "https://stackoverflow.com/questions/1489183/how-can-i-use-ruby-to-colorize-the-text-output-to-a-terminal"
+            }, {
+               "date_added": "13319646880000000",
+               "date_last_used": "0",
+               "guid": "56ce5775-f452-4b79-97f3-887213d7f71c",
+               "id": "46",
+               "name": "How to reverse proxy to different places depending on subdomain in Nginx? - Server Fault",
+               "type": "url",
+               "url": "https://serverfault.com/questions/753105/how-to-reverse-proxy-to-different-places-depending-on-subdomain-in-nginx"
+            }, {
+               "children": [ {
+                  "date_added": "13286302037000000",
+                  "date_last_used": "0",
+                  "guid": "26eda49b-04ca-465b-926d-e4ebdd9c9d00",
+                  "id": "60",
+                  "name": "kOS",
+                  "type": "url",
+                  "url": "https://ksp-kos.github.io/KOS_DOC/"
+               }, {
+                  "date_added": "13286389311000000",
+                  "date_last_used": "13342312296887942",
+                  "guid": "188d5420-8063-4645-aebe-196a82e0ef2b",
+                  "id": "61",
+                  "name": "dV Planner",
+                  "type": "url",
+                  "url": "https://ksp.loicviennois.com/"
+               } ],
+               "date_added": "13342439642710125",
+               "date_last_used": "0",
+               "date_modified": "13342439659139701",
+               "guid": "b1ee8e44-b5ad-4340-bf1f-faafa03667a4",
+               "id": "131",
+               "name": "KSP",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13305757383000000",
+                  "date_last_used": "0",
+                  "guid": "556d710a-65f1-47e2-9f53-66034023ae76",
+                  "id": "9",
+                  "name": "SDL",
+                  "type": "url",
+                  "url": "https://lazyfoo.net/tutorials/SDL/01_hello_SDL/index2.php"
+               }, {
+                  "children": [ {
+                     "date_added": "13308737646000000",
+                     "date_last_used": "0",
+                     "guid": "b0e4a783-ebd5-402f-a1a7-9d54f67ed3ce",
+                     "id": "40",
+                     "name": "sethvargo/go-githubactions: Go SDK for GitHub Actions - easily author GitHub Actions in Go",
+                     "type": "url",
+                     "url": "https://github.com/sethvargo/go-githubactions"
+                  }, {
+                     "date_added": "13308737679000000",
+                     "date_last_used": "0",
+                     "guid": "b13266ef-534e-4b03-931c-06be1c286e3e",
+                     "id": "41",
+                     "name": "actions/setup-go: Set up your GitHub Actions workflow with a specific version of Go",
+                     "type": "url",
+                     "url": "https://github.com/actions/setup-go"
+                  }, {
+                     "date_added": "13308740745000000",
+                     "date_last_used": "0",
+                     "guid": "9bae1df8-d600-4e8e-ad73-513e311acf2b",
+                     "id": "42",
+                     "name": "grezar/go-circleci: CircleCI API (V2) Client Library in Go",
+                     "type": "url",
+                     "url": "https://github.com/grezar/go-circleci"
+                  } ],
+                  "date_added": "13331591689203477",
+                  "date_last_used": "0",
+                  "date_modified": "0",
+                  "guid": "d1fa44f9-5a8f-4d0c-b7ed-286a4d2073b6",
+                  "id": "39",
+                  "name": "Go GitHub Actions",
+                  "type": "folder"
+               }, {
+                  "children": [ {
+                     "date_added": "13317928859000000",
+                     "date_last_used": "13341074227310835",
+                     "guid": "16e09344-e191-4bf1-9175-c4014deff1ed",
+                     "id": "53",
+                     "name": "edluffy/specs.nvim: 👓 A fast and lightweight Neovim lua plugin to keep an eye on where your cursor has jumped.",
+                     "type": "url",
+                     "url": "https://github.com/edluffy/specs.nvim"
+                  }, {
+                     "date_added": "13317931407000000",
+                     "date_last_used": "13341074234369745",
+                     "guid": "4c8deb2a-8c96-4908-b459-ef68bd575636",
+                     "id": "54",
+                     "name": "ojroques/nvim-lspfuzzy: A Neovim plugin to make the LSP client use FZF",
+                     "type": "url",
+                     "url": "https://github.com/ojroques/nvim-lspfuzzy"
+                  }, {
+                     "date_added": "13317933649000000",
+                     "date_last_used": "0",
+                     "guid": "fe6cde88-c873-473c-a1d0-29846ab9a7cd",
+                     "id": "55",
+                     "name": "folke/noice.nvim: 💥 Highly experimental plugin that completely replaces the UI for messages, cmdline and the popupmenu.",
+                     "type": "url",
+                     "url": "https://github.com/folke/noice.nvim"
+                  }, {
+                     "date_added": "13317934376000000",
+                     "date_last_used": "13341074346087520",
+                     "guid": "1763a64b-e8ff-4d1d-91d8-d6e7ddf02e49",
+                     "id": "56",
+                     "name": "NvChad/nvim-colorizer.lua: Maintained fork of the fastest Neovim colorizer",
+                     "type": "url",
+                     "url": "https://github.com/NvChad/nvim-colorizer.lua"
+                  } ],
+                  "date_added": "13331591689203736",
+                  "date_last_used": "0",
+                  "date_modified": "0",
+                  "guid": "0d456a99-494f-4c7b-9be6-5cbb969904ef",
+                  "id": "52",
+                  "name": "nvim",
+                  "type": "folder"
+               }, {
+                  "date_added": "13285871111000000",
+                  "date_last_used": "13335825756580631",
+                  "guid": "ec650ae1-eee4-49a4-b1d9-ef2b0a5c9b6f",
+                  "id": "62",
+                  "name": "Simple NAT punch-through",
+                  "type": "url",
+                  "url": "http://www.mindcontrol.org/~hplus/nat-punch.html"
+               }, {
+                  "date_added": "13285935628000000",
+                  "date_last_used": "13335825760141482",
+                  "guid": "2186d82d-f6e3-4c0c-86c1-147e3ef4f39b",
+                  "id": "63",
+                  "name": "NAT Punch-through for Multiplayer Games | Keith Johnston",
+                  "type": "url",
+                  "url": "https://keithjohnston.wordpress.com/2014/02/17/nat-punch-through-for-multiplayer-games/"
+               } ],
+               "date_added": "13342439686199071",
+               "date_last_used": "0",
+               "date_modified": "13342439915876676",
+               "guid": "e6c060e0-e048-457c-a6ca-38b0df94f9e3",
+               "id": "132",
+               "name": "Dev",
+               "type": "folder"
+            }, {
+               "children": [ {
+                  "date_added": "13312300792000000",
+                  "date_last_used": "0",
+                  "guid": "783fd163-4311-41da-a7a3-1d4d522d3421",
+                  "id": "28",
+                  "name": "aabrinken",
+                  "type": "url",
+                  "url": "https://www.haveforeningenaabrinken.dk/forsiden"
+               }, {
+                  "date_added": "13312301018000000",
+                  "date_last_used": "0",
+                  "guid": "4e7b9a7c-1139-4f4a-9b23-cd5d46290734",
+                  "id": "29",
+                  "name": "Bakkebang",
+                  "type": "url",
+                  "url": "http://hfbakkevang.dk/havesalg/venteliste/"
+               }, {
+                  "date_added": "13312301239000000",
+                  "date_last_used": "0",
+                  "guid": "67c3b9d6-0924-421e-952a-cfaf98b7cb1f",
+                  "id": "30",
+                  "name": "Fritiden",
+                  "type": "url",
+                  "url": "http://www.fritiden.net/?page=Ventelisten"
+               }, {
+                  "date_added": "13312301340000000",
+                  "date_last_used": "0",
+                  "guid": "3a4555eb-ea37-4371-9615-babe64ebbab9",
+                  "id": "31",
+                  "name": "Skovlunden - Lukket til ?",
+                  "type": "url",
+                  "url": "https://haveforeningenskovlunden.dk/"
+               }, {
+                  "date_added": "13312301614000000",
+                  "date_last_used": "0",
+                  "guid": "24a0cb90-67dc-430b-bedc-7b259f4c021f",
+                  "id": "32",
+                  "name": "Engvang Viby J",
+                  "type": "url",
+                  "url": "https://www.hfengvangviby.dk/"
+               }, {
+                  "date_added": "13312301677000000",
+                  "date_last_used": "0",
+                  "guid": "1a0424dd-65f9-4278-81e3-7fad717e0e6d",
+                  "id": "33",
+                  "name": "Norringhold - Viby - Lukket til 2023",
+                  "type": "url",
+                  "url": "https://norringholm.dk/koeb-og-salg-af-haver/venteliste/"
+               }, {
+                  "date_added": "13312302013000000",
+                  "date_last_used": "0",
+                  "guid": "2d990814-eb20-40d7-b6bb-bb3005bbf5bd",
+                  "id": "34",
+                  "name": "Krikevangen - Risskov",
+                  "type": "url",
+                  "url": "https://www.haveforeningenkirkevangen.dk/wp/opskrivning-til-have/"
+               }, {
+                  "date_added": "13312302195000000",
+                  "date_last_used": "0",
+                  "guid": "659694d4-a3f0-40fd-8c6b-d11c79eb3934",
+                  "id": "35",
+                  "name": "Oldjorden - Åbyhøj",
+                  "type": "url",
+                  "url": "https://weboldjorden.wixsite.com/oldjorden/venteliste"
+               }, {
+                  "date_added": "13312302370000000",
+                  "date_last_used": "0",
+                  "guid": "86397729-281d-4d5c-a806-4128f4652bdd",
+                  "id": "36",
+                  "name": "100K Langsøhaven",
+                  "type": "url",
+                  "url": "https://kolonihave.nu/map_location/kolonihave-til-salg-5/"
+               }, {
+                  "date_added": "13312303022000000",
+                  "date_last_used": "0",
+                  "guid": "e330caf3-430f-4199-ab85-734bcf71642d",
+                  "id": "37",
+                  "name": "Kolonihave Viby J. - kolonihave.nu",
+                  "type": "url",
+                  "url": "https://kolonihave.nu/map_location/kolonihave-til-salg-runddelen-62/"
+               } ],
+               "date_added": "13331591689203254",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "4776b4e1-ff90-4327-bc27-f228d6181717",
+               "id": "27",
+               "name": "Kolonihave",
+               "type": "folder"
+            }, {
+               "date_added": "13307464977000000",
+               "date_last_used": "0",
+               "guid": "a0b39731-d74b-498b-a76a-b1a840605cb5",
+               "id": "8",
+               "name": "Badminton",
+               "type": "url",
+               "url": "https://clipnfit.halbooking.dk/newlook/proc_liste.asp"
+            }, {
+               "children": [ {
+                  "date_added": "13319215687000000",
+                  "date_last_used": "13331986548875719",
+                  "guid": "a25b997c-63ba-4aa4-b03b-c8fdf0728258",
+                  "id": "58",
+                  "name": "How to Expose Film Correctly at Night",
+                  "type": "url",
+                  "url": "https://www.picturecorrect.com/how-to-expose-film-correctly-at-night/"
+               }, {
+                  "date_added": "13319215781000000",
+                  "date_last_used": "13331986549327954",
+                  "guid": "f57614e5-c1e5-48fd-b95d-44f84429d12b",
+                  "id": "59",
+                  "name": "Camera manual library",
+                  "type": "url",
+                  "url": "https://www.butkus.org/chinon/"
+               } ],
+               "date_added": "13331591689203879",
+               "date_last_used": "0",
+               "date_modified": "0",
+               "guid": "9bb76bd2-4db5-405f-9ab2-a3b8ee652006",
+               "id": "57",
+               "name": "Photography",
+               "type": "folder"
+            }, {
+               "date_added": "13326477957000000",
+               "date_last_used": "0",
+               "guid": "0f1d9854-8ef6-4e45-ae7e-411248b6efe5",
+               "id": "64",
+               "name": "eBay Film Search",
+               "type": "url",
+               "url": "https://www.ebay.com/b/36-Photos-Color-400-ISO-Camera-Films/4201/bn_114691503?LH_BIN=1&LH_ItemCondition=1000&LH_PrefLoc=5&mag=1&rt=nc&_sop=15"
+            }, {
+               "children": [ {
+                  "date_added": "13248098498000000",
+                  "date_last_used": "13342220616908847",
+                  "guid": "dd91b83c-02fd-48d6-ade1-f52ae3032b36",
+                  "id": "48",
+                  "name": "Factorio Cheat Sheet",
+                  "type": "url",
+                  "url": "https://factoriocheatsheet.com/"
+               }, {
+                  "date_added": "13328271537000000",
+                  "date_last_used": "0",
+                  "guid": "3ba42035-3a83-44bd-88d9-2efaf32a91c2",
+                  "id": "49",
+                  "name": "Factorio Calculator",
+                  "type": "url",
+                  "url": "https://kirkmcdonald.github.io/calc.html#data=1-1-19&min=2&items=automation-science-pack:f:5"
+               } ],
+               "date_added": "13342439908201457",
+               "date_last_used": "0",
+               "date_modified": "13342439914326459",
+               "guid": "fe410f42-efe8-4895-8911-a70662379733",
+               "id": "133",
+               "name": "Factorio",
+               "type": "folder"
+            }, {
+               "date_added": "13338467262196536",
+               "date_last_used": "0",
+               "guid": "a53472bf-de34-440b-93fb-47822a811f30",
+               "id": "128",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Beboerparkeringskort",
+               "type": "url",
+               "url": "https://www.aarhus.dk/borger/trafik-og-parkering/parkering/licens/beboerlicens/kort-over-omraader-med-beboerparkering-1/"
+            } ],
+            "date_added": "13331591689203468",
+            "date_last_used": "0",
+            "date_modified": "13342482553628994",
+            "guid": "65a796b6-abfd-4bda-922a-7b1b8f399c8b",
+            "id": "38",
+            "name": "Root",
+            "type": "folder"
+         }, {
+            "date_added": "13343042762825612",
+            "date_last_used": "0",
+            "guid": "d9bfc10c-e998-420a-807e-920f5c9510fa",
+            "id": "141",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Castle",
+            "type": "url",
+            "url": "https://www.notion.so/Defend-The-Castle-Deluxe-936d37acc8624ae088e1f758f3aa663c"
+         }, {
+            "date_added": "13342439623069878",
+            "date_last_used": "0",
+            "guid": "d11cf1bf-6dc3-4af0-b9f9-86beb8ebde41",
+            "id": "130",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Lumbar Disc Herniation Exercises New York | Lumbar Disc Herniation New York",
+            "type": "url",
+            "url": "https://www.rickysinghmd.com/lumbar-disc-herniation/"
+         }, {
+            "date_added": "13342482553628994",
+            "date_last_used": "13355404438965533",
+            "guid": "7b4289c8-1514-4199-b35c-17418549e9a2",
+            "id": "134",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Gadsby Narrated",
+            "type": "url",
+            "url": "https://www.youtube.com/playlist?list=PL2WJhtTF0eGhKSO4NW4CUrYVaJUPeW0Z0"
+         }, {
+            "date_added": "13342701959253258",
+            "date_last_used": "13343490704630003",
+            "guid": "74072bd9-6da2-4306-84f5-f52469652cd4",
+            "id": "136",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Maerkbare",
+            "type": "url",
+            "url": "https://www.maerkbare.dk/collections/maend?uff_vhw9vh_varMetafield%3Aattribute.size=43&uff_vj84au_vendor=Vivobarefoot"
+         }, {
+            "date_added": "13343158808193902",
+            "date_last_used": "13352214447958896",
+            "guid": "3ad7f429-6ea3-4dc4-900d-891ccc512f18",
+            "id": "144",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Bevy",
+            "type": "url",
+            "url": "https://docs.rs/bevy/latest/bevy/"
+         }, {
+            "date_added": "13342738208714513",
+            "date_last_used": "13343476977538689",
+            "guid": "15fb8315-4fea-42b4-9e62-34ee486269cd",
+            "id": "137",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Bevy Book",
+            "type": "url",
+            "url": "https://bevy-cheatbook.github.io/builtins.html"
+         }, {
+            "date_added": "13342788784150872",
+            "date_last_used": "13349186774181378",
+            "guid": "ceecba72-c2e0-4251-bdd9-5b2a9027d685",
+            "id": "138",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Rapier mouse raycast",
+            "type": "url",
+            "url": "https://github.com/bevyengine/bevy/discussions/5267"
+         }, {
+            "date_added": "13342802754269560",
+            "date_last_used": "13343054792078568",
+            "guid": "ee5aa3bb-6108-49ee-b0cf-34d53aa45959",
+            "id": "139",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Rapier",
+            "type": "url",
+            "url": "https://rapier.rs/docs/user_guides/bevy_plugin/getting_started_bevy"
+         }, {
+            "date_added": "13343083492753886",
+            "date_last_used": "0",
+            "guid": "e3953008-6df7-4540-87c3-f4a794fbd4ea",
+            "id": "142",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Pixel art run animation",
+            "type": "url",
+            "url": "https://www.slynyrd.com/blog/2018/8/19/pixelblog-8-intro-to-animation"
+         }, {
+            "date_added": "13343135781086288",
+            "date_last_used": "13350245277446471",
+            "guid": "e05a0f70-cbfa-4fb1-a10a-439cec77eb50",
+            "id": "143",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "xpbd guide",
+            "type": "url",
+            "url": "https://taintedcoders.com/bevy/xpbd/"
+         }, {
+            "date_added": "13350940224798998",
+            "date_last_used": "13352816737311901",
+            "guid": "56f104c7-0ff7-4530-89b8-93a14aa7b04f",
+            "id": "162",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Spand til UH keramik",
+            "type": "url",
+            "url": "https://www.lomax.dk/rengoering/affaldsspande-og-stativer/affaldsspande/rund-beholder-100-l-hvid-6601329/?pla=1&gad_source=1&gclsrc=ds"
+         }, {
+            "date_added": "13351721188321404",
+            "date_last_used": "0",
+            "guid": "26f5c5ba-a108-4509-986c-36b91199c4a2",
+            "id": "164",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Roliba Stålwire fzb 1,5mm á 30m | Carl Ras",
+            "type": "url",
+            "url": "https://www.carl-ras.dk/stalwire/?product=45232510/45232510"
+         } ],
+         "date_added": "13331591681486244",
          "date_last_used": "0",
-         "date_modified": "0",
+         "date_modified": "13351721188321404",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks bar",
          "type": "folder"
       },
       "other": {
-         "children": [ {
-            "date_added": "13355263969665857",
-            "date_last_used": "0",
-            "guid": "6eac29bd-7dbc-471a-8c18-780e7eb8ce77",
-            "id": "5",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "List of 3D Printers - Google Drive",
-            "type": "url",
-            "url": "https://docs.google.com/spreadsheets/u/1/d/1QjCOsMmEbKsQXktG-MrRGlfk_lk5pMwYuc7GaMYguNg/htmlview#"
-         }, {
-            "date_added": "13355413373398383",
-            "date_last_used": "0",
-            "guid": "ba7f6662-ab1f-49a7-9b88-3aaaa4c3a2c6",
-            "id": "6",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "linux brave browser where are bookmarks stored - Google Search",
-            "type": "url",
-            "url": "https://www.google.com/search?q=linux+brave+browser+where+are+bookmarks+stored&oq=linux+brave+browser+where+are+bookmarks+stored&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQLhhA0gEINTYxN2owajGoAgCwAgA&sourceid=chrome&ie=UTF-8"
-         }, {
-            "date_added": "13355502067088167",
-            "date_last_used": "0",
-            "guid": "a7b6a43a-5930-4965-b533-73474b3ab019",
-            "id": "8",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "Sign in to GitHub · GitHub",
-            "type": "url",
-            "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FJonasPhilbert%2Fdotfiles"
-         } ],
-         "date_added": "13355063731945870",
+         "children": [  ],
+         "date_added": "13331591681486246",
          "date_last_used": "0",
-         "date_modified": "13355502067088167",
+         "date_modified": "13347995502868042",
          "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
          "id": "2",
          "name": "Other bookmarks",
@@ -56,7 +494,7 @@
       },
       "synced": {
          "children": [  ],
-         "date_added": "13355063731945874",
+         "date_added": "13331591681486249",
          "date_last_used": "0",
          "date_modified": "0",
          "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
