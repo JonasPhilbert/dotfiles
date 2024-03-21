@@ -125,6 +125,10 @@
 
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
+  services.kanata = {
+    enable = true;
+    keyboard.config = "(defsrc caps) (deflayer qwerty @cap) (defalias cap (tap esc))";
+  };
   services.redshift = {
     enable = true;
     temperature = {
