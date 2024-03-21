@@ -38,7 +38,7 @@
     enable = true;
     layout = "dk";
     xkbVariant = "";
-    xkbOptions = "caps:sweapescape";
+    xkbOptions = "caps:swapescape";
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
