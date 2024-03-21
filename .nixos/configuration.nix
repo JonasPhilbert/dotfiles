@@ -93,7 +93,6 @@
       obsidian
       telegram-desktop
       redshift
-      xflux-gui
     ];
   };
 
@@ -120,6 +119,17 @@
 
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
+  services.redshift = {
+    enable = true;
+    brightness = {
+      day = "1";
+      night = "1";
+    };
+    temperature = {
+      day = 3700; # 5500
+      night = 3700;
+    };
+  };
 
   # Options for programs.
   programs.fish.enable = true;
