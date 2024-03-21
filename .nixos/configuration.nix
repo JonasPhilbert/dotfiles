@@ -112,6 +112,9 @@
       powertop
   ];
 
+  location.latitude = 56;
+  location.longitude = 10;
+
   # Allow certain packages, even though they have known security issues #yolo
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0" # Required by package/obsidian
