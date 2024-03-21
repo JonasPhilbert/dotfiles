@@ -1,0 +1,69 @@
+{
+   "checksum": "d58ec9687535ac2fa3d022f4a49c0772",
+   "roots": {
+      "bookmark_bar": {
+         "children": [  ],
+         "date_added": "13355063731945861",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
+         "id": "1",
+         "name": "Bookmarks bar",
+         "type": "folder"
+      },
+      "other": {
+         "children": [ {
+            "date_added": "13355263969665857",
+            "date_last_used": "0",
+            "guid": "6eac29bd-7dbc-471a-8c18-780e7eb8ce77",
+            "id": "5",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "List of 3D Printers - Google Drive",
+            "type": "url",
+            "url": "https://docs.google.com/spreadsheets/u/1/d/1QjCOsMmEbKsQXktG-MrRGlfk_lk5pMwYuc7GaMYguNg/htmlview#"
+         }, {
+            "date_added": "13355413373398383",
+            "date_last_used": "0",
+            "guid": "ba7f6662-ab1f-49a7-9b88-3aaaa4c3a2c6",
+            "id": "6",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "linux brave browser where are bookmarks stored - Google Search",
+            "type": "url",
+            "url": "https://www.google.com/search?q=linux+brave+browser+where+are+bookmarks+stored&oq=linux+brave+browser+where+are+bookmarks+stored&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQLhhA0gEINTYxN2owajGoAgCwAgA&sourceid=chrome&ie=UTF-8"
+         }, {
+            "date_added": "13355502067088167",
+            "date_last_used": "0",
+            "guid": "a7b6a43a-5930-4965-b533-73474b3ab019",
+            "id": "8",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Sign in to GitHub · GitHub",
+            "type": "url",
+            "url": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2FJonasPhilbert%2Fdotfiles"
+         } ],
+         "date_added": "13355063731945870",
+         "date_last_used": "0",
+         "date_modified": "13355502067088167",
+         "guid": "82b081ec-3dd3-529c-8475-ab6c344590dd",
+         "id": "2",
+         "name": "Other bookmarks",
+         "type": "folder"
+      },
+      "synced": {
+         "children": [  ],
+         "date_added": "13355063731945874",
+         "date_last_used": "0",
+         "date_modified": "0",
+         "guid": "4cf2e351-0e85-532b-bb37-df045d8f8d0f",
+         "id": "3",
+         "name": "Mobile bookmarks",
+         "type": "folder"
+      }
+   },
+   "version": 1
+}
