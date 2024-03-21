@@ -37,7 +37,7 @@
     enable = true;
     layout = "dk";
     xkbVariant = "";
-    xkbOptions = "caps:sweapescape";
+    # xkbOptions = "caps:sweapescape";
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
@@ -112,6 +112,7 @@
       powertop
       rustc
       cargo
+      kanata
   ];
 
   location.latitude = 56.15;
