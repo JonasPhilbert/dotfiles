@@ -112,8 +112,8 @@
       powertop
   ];
 
-  location.latitude = 56;
-  location.longitude = 10;
+  location.latitude = 56.15;
+  location.longitude = 10.21;
 
   # Allow certain packages, even though they have known security issues #yolo
   nixpkgs.config.permittedInsecurePackages = [
