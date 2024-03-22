@@ -38,7 +38,6 @@
     enable = true;
     layout = "dk";
     xkbVariant = "";
-    xkbOptions = "caps:swapescape";
     displayManager.gdm.enable = true;
     desktopManager.gnome.enable = true;
   };
@@ -126,6 +125,7 @@
 
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
+  services.xserver.xkbOptions = "caps:swapescape";
   # services.kanata = {
   #   enable = true;
   #   keyboards = [
