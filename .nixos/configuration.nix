@@ -93,6 +93,7 @@
       libreoffice
       obsidian
       telegram-desktop
+      cura
     ];
   };
 
