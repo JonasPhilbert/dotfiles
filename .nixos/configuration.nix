@@ -92,8 +92,8 @@
       libreoffice
       obsidian
       telegram-desktop
-      wine
       cura
+      freecad
     ];
   };
 
