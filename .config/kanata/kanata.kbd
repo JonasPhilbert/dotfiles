@@ -1,0 +1,7 @@
+(defsrc
+  caps
+)
+(deflayer jonas
+  @xcaps
+)
+(defalias xcaps esc)
