@@ -110,7 +110,6 @@
       fzf
       rclone
       gcc13 # GNU compiler collection
-      powertop
       rustc
       cargo
       kanata
