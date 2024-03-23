@@ -114,7 +114,7 @@
       powertop
       rustc
       cargo
-      # kanata
+      kanata
   ];
 
   location.latitude = 56.15;
@@ -127,13 +127,21 @@
 
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
-  services.xserver.xkbOptions = "caps:swapescape";
-  # services.kanata = {
-  #   enable = true;
-  #   keyboards = [
-  #     { config = "(defsrc caps) (deflayer qwerty @cap) (defalias cap (tap esc))"; }
-  #   ];
-  # };
+  # services.xserver.xkbOptions = "caps:swapescape";
+  services.kanata = {
+    enable = true;
+    keyboards.default = {
+      config = ''
+        (defsrc
+          ½ 1 2 3 4 5 6 7 8 9 0 + ´ bspc
+        )
+        (deflayer jonas
+          ½ @test 2 3 4 5 6 7 8 9 0 + ´ bspc
+        )
+        (defalias test j)
+      '';
+    };
+  };
 
   # Options for programs.
   programs.fish.enable = true;
