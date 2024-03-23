@@ -134,7 +134,21 @@
 
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
-  services.kanata.enable = true;
+  # services.xserver.xkbOptions = "caps:swapescape";
+  services.kanata = {
+    enable = true;
+    keyboards.default = {
+      config = ''
+        (defsrc
+          caps
+        )
+        (deflayer jonas
+          @xcaps
+        )
+        (defalias xcaps esc)
+      '';
+    };
+  };
 
   # Options for programs.
   programs.fish.enable = true;
