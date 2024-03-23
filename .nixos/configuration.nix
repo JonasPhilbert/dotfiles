@@ -139,12 +139,8 @@
     enable = true;
     keyboards.default = {
       config = ''
-        (defsrc
-          caps
-        )
-        (deflayer jonas
-          @xcaps
-        )
+        (defsrc caps)
+        (deflayer jonas @xcaps)
         (defalias xcaps esc)
       '';
     };
