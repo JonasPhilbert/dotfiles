@@ -38,8 +38,8 @@
     enable = true;
     layout = "dk";
     xkbVariant = "";
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    displayManager.sddm.enable = true;
+    desktopManager.plasma5.enable = true;
   };
 
   # Configure console keymap
