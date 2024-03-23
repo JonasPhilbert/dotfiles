@@ -94,6 +94,7 @@
       telegram-desktop
       cura
       freecad
+      blender
     ];
   };
 
