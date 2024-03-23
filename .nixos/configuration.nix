@@ -94,7 +94,6 @@
       telegram-desktop
       cura
       freecad
-      wine
     ];
   };
 
