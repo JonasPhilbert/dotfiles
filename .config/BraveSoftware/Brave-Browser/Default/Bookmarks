@@ -1,5 +1,5 @@
 {
-   "checksum": "431591476f504803546a1da8741f958d",
+   "checksum": "b3fb6b174c402be142ee4471f6c16472",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -354,7 +354,7 @@
             "url": "https://www.notion.so/Defend-The-Castle-Deluxe-936d37acc8624ae088e1f758f3aa663c"
          }, {
             "date_added": "13342439623069878",
-            "date_last_used": "0",
+            "date_last_used": "13355535812449545",
             "guid": "d11cf1bf-6dc3-4af0-b9f9-86beb8ebde41",
             "id": "130",
             "meta_info": {
@@ -473,10 +473,32 @@
             "name": "Roliba Stålwire fzb 1,5mm á 30m | Carl Ras",
             "type": "url",
             "url": "https://www.carl-ras.dk/stalwire/?product=45232510/45232510"
+         }, {
+            "date_added": "13355506272717084",
+            "date_last_used": "0",
+            "guid": "fe1fe1cf-42a7-47cf-b5ea-3f4c3b0df49c",
+            "id": "166",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "Best Way to Remap Caps Lock to Esc with Wayland - Help - NixOS Discourse",
+            "type": "url",
+            "url": "https://discourse.nixos.org/t/best-way-to-remap-caps-lock-to-esc-with-wayland/39707/2"
+         }, {
+            "date_added": "13355649596351803",
+            "date_last_used": "13355650280823912",
+            "guid": "4beb40c0-3f38-47ff-96f9-f1437b03a961",
+            "id": "168",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "nixos-config/configuration.nix at master · Philipp-M/nixos-config · GitHub",
+            "type": "url",
+            "url": "https://github.com/Philipp-M/nixos-config/blob/master/configuration.nix"
          } ],
          "date_added": "13331591681486244",
          "date_last_used": "0",
-         "date_modified": "13351721188321404",
+         "date_modified": "13355649596351803",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks bar",
