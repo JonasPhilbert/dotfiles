@@ -1,4 +1,4 @@
-function nixosconf --description 'Rebuilds and switches NixOS.'
+function nixosbuild --description 'Rebuilds and switches NixOS.'
   set old_dir $PWD
   cd ~/.nixos
   nixos-generate-config --dir .
