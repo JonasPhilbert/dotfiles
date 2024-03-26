@@ -94,7 +94,7 @@
       obsidian
       telegram-desktop
       cura
-      freecad
+      openscad
       blender
     ];
   };
