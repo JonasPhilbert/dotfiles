@@ -96,6 +96,7 @@
       cura
       openscad
       blender
+      thunderbird
     ];
   };
 
