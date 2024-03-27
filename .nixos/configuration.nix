@@ -97,6 +97,7 @@
       openscad
       blender
       thunderbird
+      baobab
     ];
   };
 
