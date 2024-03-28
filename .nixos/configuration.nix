@@ -99,6 +99,7 @@
       blender
       thunderbird
       baobab
+      ventoy
     ];
   };
 
