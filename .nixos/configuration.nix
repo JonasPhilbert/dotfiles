@@ -120,7 +120,6 @@
       cargo
       kanata
       wine
-      virtualbox
   ];
 
   location.latitude = 56.15;
@@ -157,7 +156,6 @@
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
 
-  # Allow virtualization (for VirtualBox), see: https://nixos.wiki/wiki/VirtualBox
-  virtualisation.virtualbox.host.enable = true;
-  users.extraGroups.vboxusers.members = [ "jonas" ];
+  # Enable VMWare virtualization.
+  virtualisation.vmware.host.enable = true;
 }
