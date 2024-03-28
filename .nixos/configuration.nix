@@ -120,6 +120,7 @@
       rustc
       cargo
       kanata
+      wine
   ];
 
   location.latitude = 56.15;
