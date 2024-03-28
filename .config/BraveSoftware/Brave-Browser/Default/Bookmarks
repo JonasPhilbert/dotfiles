@@ -1,5 +1,5 @@
 {
-   "checksum": "5cfb621ef0740e99d462067e1a29ca0b",
+   "checksum": "7125ad3658bb5b82e25c786bfdd4846f",
    "roots": {
       "bookmark_bar": {
          "children": [ {
@@ -342,28 +342,6 @@
             "name": "Root",
             "type": "folder"
          }, {
-            "date_added": "13343042762825612",
-            "date_last_used": "0",
-            "guid": "d9bfc10c-e998-420a-807e-920f5c9510fa",
-            "id": "141",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "Castle",
-            "type": "url",
-            "url": "https://www.notion.so/Defend-The-Castle-Deluxe-936d37acc8624ae088e1f758f3aa663c"
-         }, {
-            "date_added": "13342439623069878",
-            "date_last_used": "13355535812449545",
-            "guid": "d11cf1bf-6dc3-4af0-b9f9-86beb8ebde41",
-            "id": "130",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "Lumbar Disc Herniation Exercises New York | Lumbar Disc Herniation New York",
-            "type": "url",
-            "url": "https://www.rickysinghmd.com/lumbar-disc-herniation/"
-         }, {
             "date_added": "13342482553628994",
             "date_last_used": "13355404438965533",
             "guid": "7b4289c8-1514-4199-b35c-17418549e9a2",
@@ -375,74 +353,8 @@
             "type": "url",
             "url": "https://www.youtube.com/playlist?list=PL2WJhtTF0eGhKSO4NW4CUrYVaJUPeW0Z0"
          }, {
-            "date_added": "13342701959253258",
-            "date_last_used": "13343490704630003",
-            "guid": "74072bd9-6da2-4306-84f5-f52469652cd4",
-            "id": "136",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "Maerkbare",
-            "type": "url",
-            "url": "https://www.maerkbare.dk/collections/maend?uff_vhw9vh_varMetafield%3Aattribute.size=43&uff_vj84au_vendor=Vivobarefoot"
-         }, {
-            "date_added": "13343158808193902",
-            "date_last_used": "13352214447958896",
-            "guid": "3ad7f429-6ea3-4dc4-900d-891ccc512f18",
-            "id": "144",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "Bevy",
-            "type": "url",
-            "url": "https://docs.rs/bevy/latest/bevy/"
-         }, {
-            "date_added": "13342738208714513",
-            "date_last_used": "13343476977538689",
-            "guid": "15fb8315-4fea-42b4-9e62-34ee486269cd",
-            "id": "137",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "Bevy Book",
-            "type": "url",
-            "url": "https://bevy-cheatbook.github.io/builtins.html"
-         }, {
-            "date_added": "13342788784150872",
-            "date_last_used": "13349186774181378",
-            "guid": "ceecba72-c2e0-4251-bdd9-5b2a9027d685",
-            "id": "138",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "Rapier mouse raycast",
-            "type": "url",
-            "url": "https://github.com/bevyengine/bevy/discussions/5267"
-         }, {
-            "date_added": "13343135781086288",
-            "date_last_used": "13350245277446471",
-            "guid": "e05a0f70-cbfa-4fb1-a10a-439cec77eb50",
-            "id": "143",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "xpbd guide",
-            "type": "url",
-            "url": "https://taintedcoders.com/bevy/xpbd/"
-         }, {
-            "date_added": "13355506272717084",
-            "date_last_used": "13355659459102067",
-            "guid": "fe1fe1cf-42a7-47cf-b5ea-3f4c3b0df49c",
-            "id": "166",
-            "meta_info": {
-               "power_bookmark_meta": ""
-            },
-            "name": "Best Way to Remap Caps Lock to Esc with Wayland - Help - NixOS Discourse",
-            "type": "url",
-            "url": "https://discourse.nixos.org/t/best-way-to-remap-caps-lock-to-esc-with-wayland/39707/2"
-         }, {
             "date_added": "13355649596351803",
-            "date_last_used": "13355650280823912",
+            "date_last_used": "13355956024381548",
             "guid": "4beb40c0-3f38-47ff-96f9-f1437b03a961",
             "id": "168",
             "meta_info": {
@@ -453,7 +365,7 @@
             "url": "https://github.com/Philipp-M/nixos-config/blob/master/configuration.nix"
          }, {
             "date_added": "13355659447575088",
-            "date_last_used": "0",
+            "date_last_used": "13355956027037539",
             "guid": "bdac6c7d-2c30-4b94-a105-d64e5a4e334b",
             "id": "170",
             "meta_info": {
@@ -462,10 +374,52 @@
             "name": "Print Quality Guide | Simplify3D Software",
             "type": "url",
             "url": "https://www.simplify3d.com/resources/print-quality-troubleshooting/"
+         }, {
+            "date_added": "13355945134147932",
+            "date_last_used": "0",
+            "guid": "30f0382f-4686-4f22-8c90-504a378769f5",
+            "id": "172",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "bassamanator/Sovol-SV06-firmware at sv06-plus",
+            "type": "url",
+            "url": "https://github.com/bassamanator/Sovol-SV06-firmware/tree/sv06-plus"
+         }, {
+            "date_added": "13356008254745975",
+            "date_last_used": "0",
+            "guid": "3f073c0c-29db-4b62-82b7-71a2a747de51",
+            "id": "175",
+            "meta_info": {
+               "power_bookmark_meta": ""
+            },
+            "name": "First Steps with a New Sovol SV06 or SV06 Plus - SV06 Knowledge Base",
+            "type": "url",
+            "url": "https://sv06.blakadder.com/first-steps/#adjust-sensorless-homing"
+         }, {
+            "children": [ {
+               "date_added": "13356127249240597",
+               "date_last_used": "0",
+               "guid": "115c4008-727c-4053-9205-06f196b74365",
+               "id": "177",
+               "meta_info": {
+                  "power_bookmark_meta": ""
+               },
+               "name": "Free STL file Box customizable and printable - Boite paramétrable et imprimable 📦・3D printable model to download・Cults",
+               "type": "url",
+               "url": "https://cults3d.com/en/3d-model/gadget/boite-entierement-parametrable-et-imprimable-box-fully-customizable-and-printable"
+            } ],
+            "date_added": "13356127283631843",
+            "date_last_used": "0",
+            "date_modified": "13356127283632135",
+            "guid": "126bbc1a-30e4-4931-8911-b92e8132bf11",
+            "id": "178",
+            "name": "3D",
+            "type": "folder"
          } ],
          "date_added": "13331591681486244",
          "date_last_used": "0",
-         "date_modified": "13355659447575088",
+         "date_modified": "13356127249240597",
          "guid": "0bc5d13f-2cba-5d74-951f-3f233fe6c908",
          "id": "1",
          "name": "Bookmarks bar",
