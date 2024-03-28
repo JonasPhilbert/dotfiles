@@ -100,7 +100,7 @@
       thunderbird
       baobab
       ventoy
-      woeusb
+      virtualbox
     ];
   };
 
