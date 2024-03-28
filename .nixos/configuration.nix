@@ -94,6 +94,7 @@
       obsidian
       telegram-desktop
       cura
+      prusa-slicer
       openscad
       blender
       thunderbird
