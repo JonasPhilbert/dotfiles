@@ -155,7 +155,4 @@
   programs.fish.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
-
-  # Enable VMWare virtualization.
-  virtualisation.vmware.host.enable = true;
 }
