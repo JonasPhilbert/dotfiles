@@ -100,7 +100,6 @@
       thunderbird
       baobab
       ventoy
-      virtualbox
     ];
   };
 
@@ -121,6 +120,7 @@
       cargo
       kanata
       wine
+      virtualbox
   ];
 
   location.latitude = 56.15;
