@@ -99,7 +99,6 @@
       blender
       thunderbird
       baobab
-      doublecmd
     ];
   };
 
