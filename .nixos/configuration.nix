@@ -156,4 +156,8 @@
   programs.fish.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
+
+  # Allow virtualization (for VirtualBox), see: https://nixos.wiki/wiki/VirtualBox
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "user-with-access-to-virtualbox" ];
 }
