@@ -100,6 +100,7 @@
       thunderbird
       baobab
       ventoy
+      p7zip
     ];
   };
 
