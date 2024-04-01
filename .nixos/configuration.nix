@@ -98,9 +98,10 @@
       openscad
       blender
       thunderbird
+      wine
       baobab
       ventoy
-      p7zip
+      protonvpn-gui
     ];
   };
 
@@ -120,7 +121,7 @@
       rustc
       cargo
       kanata
-      wine
+      p7zip
   ];
 
   location.latitude = 56.15;
