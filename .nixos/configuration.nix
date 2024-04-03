@@ -40,7 +40,16 @@
     layout = "dk";
     xkbVariant = "";
     displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
+    desktopManager.gnome = {
+      enable = true;
+      extraGSettingsOverrides = ''
+        [org.gnome.desktop.wm.preferences]
+        button-layout=':minimize,maximize,close'
+
+        [org.gnome.settings-daemon.plugins.color]
+        night-light-enabled=true
+      '';
+    };
   };
 
   # Configure console keymap
@@ -141,7 +150,6 @@
 
   # Services
   services.thermald.enable = true; # Service to help prevent CPU overheating(?)
-  # services.xserver.xkbOptions = "caps:swapescape";
   services.kanata = {
     enable = true;
     keyboards.default = {
