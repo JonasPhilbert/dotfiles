@@ -48,6 +48,9 @@
 
         [org.gnome.settings-daemon.plugins.color]
         night-light-enabled=true
+
+        [org.gnome.shell]
+        favorite-apps=['Alacritty.desktop', 'org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'thunderbird.desktop', 'org.telegram.desktop.desktop', 'org.gnome.Settings.desktop']
       '';
     };
   };
