@@ -112,6 +112,7 @@
       thunderbird
       wine
       baobab
+      protonvpn-cli
       ventoy
     ];
   };
