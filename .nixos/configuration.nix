@@ -113,7 +113,6 @@
       wine
       baobab
       ventoy
-      protonvpn-gui
     ];
   };
 
