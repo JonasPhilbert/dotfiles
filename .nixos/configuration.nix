@@ -163,6 +163,7 @@
       '';
     };
   };
+  services.mullvad-vpn.enable = true;
 
   # Options for programs.
   programs.fish.enable = true;
