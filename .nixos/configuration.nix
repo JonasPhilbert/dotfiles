@@ -112,8 +112,8 @@
       thunderbird
       wine
       baobab
-      protonvpn-cli
       ventoy
+      mullvad-vpn
     ];
   };
 
