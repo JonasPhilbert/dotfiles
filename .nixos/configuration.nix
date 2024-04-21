@@ -114,6 +114,7 @@
       baobab
       ventoy
       mullvad-vpn
+      gnome-network-displays
     ];
   };
 
