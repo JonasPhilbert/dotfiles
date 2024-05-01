@@ -115,6 +115,7 @@
       ventoy
       mullvad-vpn
       gnome-network-displays
+      audacity
     ];
   };
 
