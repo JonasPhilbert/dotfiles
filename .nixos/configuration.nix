@@ -103,9 +103,7 @@
       vlc
       handbrake
       libreoffice
-      obsidian
       telegram-desktop
-      cura
       prusa-slicer
       openscad
       blender
@@ -117,7 +115,6 @@
       gnome-network-displays
       audacity
       steam
-      shotcut
     ];
   };
 
@@ -142,11 +139,6 @@
 
   location.latitude = 56.15;
   location.longitude = 10.21;
-
-  # Allow certain packages, even though they have known security issues #yolo
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0" # Required by package/obsidian
-  ];
 
   environment.sessionVariables = {
     XDG_CACHE_HOME  = "$HOME/.cache";
