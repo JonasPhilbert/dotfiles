@@ -117,6 +117,7 @@
       gnome-network-displays
       audacity
       steam
+      shotcut
     ];
   };
 
