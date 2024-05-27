@@ -130,10 +130,6 @@
       gnome-network-displays
       audacity
       steam
-      bundler
-      bundler.ruby
-      solargraph
-      nodejs
     ];
   };
 
