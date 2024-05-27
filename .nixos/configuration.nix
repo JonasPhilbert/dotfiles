@@ -118,6 +118,7 @@
       postgresql
       bundler
       bundler.ruby
+      nodejs
     ];
   };
 
