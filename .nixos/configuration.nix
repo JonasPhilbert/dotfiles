@@ -119,6 +119,7 @@
       bundler.ruby
       solargraph
       nodejs
+      libyaml
     ];
   };
 
