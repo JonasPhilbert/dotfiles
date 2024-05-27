@@ -135,6 +135,7 @@
       cargo
       kanata
       p7zip
+      ruby
   ];
 
   location.latitude = 56.15;
