@@ -115,6 +115,7 @@
       gnome-network-displays
       audacity
       steam
+      postgresql
     ];
   };
 
