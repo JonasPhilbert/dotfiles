@@ -168,4 +168,9 @@
   programs.steam.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
+
+  # PostgreSQL Config
+  services.postgresql = {
+    enable = true;
+  };
 }
