@@ -116,6 +116,8 @@
       audacity
       steam
       postgresql
+      bundler
+      bundler.ruby
     ];
   };
 
@@ -136,7 +138,6 @@
       cargo
       kanata
       p7zip
-      ruby
       gnumake
   ];
 
