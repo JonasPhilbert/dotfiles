@@ -115,7 +115,6 @@
       gnome-network-displays
       audacity
       steam
-      postgresql
       bundler
       bundler.ruby
       solargraph
@@ -172,14 +171,4 @@
   programs.steam.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
-
-  # PostgreSQL Config
-  services.postgresql = {
-    enable = true;
-    ensureDatabases = [ "mydatabase" ];
-    authentication = pkgs.lib.mkOverride 10 ''
-        #type database  DBuser  auth-method
-        local all       all     trust
-    '';
-  };
 }
