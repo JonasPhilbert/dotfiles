@@ -137,6 +137,7 @@
       kanata
       p7zip
       ruby
+      gnumake
   ];
 
   location.latitude = 56.15;
