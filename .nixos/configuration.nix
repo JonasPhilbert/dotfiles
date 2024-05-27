@@ -93,6 +93,21 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
+      git
+      wget
+      xclip # Clipboard tool
+      fish
+      neovim
+      tmux
+      ripgrep
+      fzf
+      rclone
+      gcc13 # GNU compiler collection
+      rustc
+      cargo
+      kanata
+      p7zip
+      gnumake
       brave
       bitwarden
       alacritty
@@ -119,29 +134,13 @@
       bundler.ruby
       solargraph
       nodejs
-      libyaml
     ];
   };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
-  environment.systemPackages = with pkgs; [
-      git
-      wget
-      xclip # Clipboard tool
-      fish
-      neovim
-      tmux
-      ripgrep
-      fzf
-      rclone
-      gcc13 # GNU compiler collection
-      rustc
-      cargo
-      kanata
-      p7zip
-      gnumake
-  ];
+  # environment.systemPackages = with pkgs; [
+  # ];
 
   location.latitude = 56.15;
   location.longitude = 10.21;
