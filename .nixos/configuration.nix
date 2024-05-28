@@ -48,9 +48,6 @@
 
         [org.gnome.settings-daemon.plugins.color]
         night-light-enabled=true
-
-        [org.gnome.shell]
-        favorite-apps=['Alacritty.desktop', 'org.gnome.Nautilus.desktop', 'brave-browser.desktop', 'thunderbird.desktop', 'org.telegram.desktop.desktop', 'org.gnome.Settings.desktop']
       '';
     };
   };
@@ -93,21 +90,10 @@
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.fish;
     packages = with pkgs; [
-      git
-      wget
-      xclip # Clipboard tool
-      fish
-      neovim
-      tmux
-      ripgrep
-      fzf
       rclone
-      gcc13 # GNU compiler collection
       rustc
       cargo
-      kanata
-      p7zip
-      gnumake
+
       brave
       bitwarden
       alacritty
@@ -134,12 +120,20 @@
   };
 
   # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  # environment.systemPackages = with pkgs; [
-  # ];
-
-  location.latitude = 56.15;
-  location.longitude = 10.21;
+  environment.systemPackages = with pkgs; [
+      neovim
+      wget
+      git
+      tmux
+      fish
+      p7zip
+      kanata
+      gnumake
+      gcc13 # GNU compiler collection
+      xclip # Clipboard tool
+      ripgrep
+      fzf
+  ];
 
   environment.sessionVariables = {
     XDG_CACHE_HOME  = "$HOME/.cache";
