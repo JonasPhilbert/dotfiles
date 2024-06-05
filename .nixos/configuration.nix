@@ -133,6 +133,7 @@
       xclip # Clipboard tool
       ripgrep
       fzf
+      direnv
   ];
 
   environment.sessionVariables = {
