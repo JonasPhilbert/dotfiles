@@ -116,6 +116,7 @@
       gnome-network-displays
       audacity
       steam
+      obs-studio
     ];
   };
 
