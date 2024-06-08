@@ -118,6 +118,7 @@
       steam
       obs-studio
       soundkonverter
+      tor-browser
     ];
   };
 
