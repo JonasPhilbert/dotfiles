@@ -136,7 +136,8 @@
       xclip # Clipboard tool
       ripgrep
       fzf
-      gnupg
+      gnupg # Generates keys (PGP)
+      pinentry-curses # Needed for GPG to work.
   ];
 
   environment.sessionVariables = {
@@ -165,4 +166,12 @@
   programs.steam.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
+
+  # Needed for GPG to work: https://discourse.nixos.org/t/cant-get-gnupg-to-work-no-pinentry/15373/22
+  services.pcscd.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "curses";
+    enableSSHSupport = true;
+  };
 }
