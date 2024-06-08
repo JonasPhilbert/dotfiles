@@ -136,6 +136,7 @@
       xclip # Clipboard tool
       ripgrep
       fzf
+      gnupg
   ];
 
   environment.sessionVariables = {
