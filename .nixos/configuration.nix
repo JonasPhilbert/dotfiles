@@ -110,13 +110,14 @@
       blender
       thunderbird
       wine
-      baobab
+      baobab # Disk usage analyser and visualization tool. Like windirstat.
       ventoy
       mullvad-vpn
       gnome-network-displays
       audacity
       steam
       obs-studio
+      soundkonverter
     ];
   };
 
