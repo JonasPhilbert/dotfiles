@@ -119,6 +119,7 @@
       soundkonverter
       tor-browser
       kleopatra # Certificate (& PGP key) manager GUI.
+      wine
     ];
   };
 
