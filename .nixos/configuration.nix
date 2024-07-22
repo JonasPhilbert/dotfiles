@@ -60,14 +60,15 @@
 
   # Enable sound with pipewire.
   sound.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.support32Bit = true;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
+  # services.pipewire = {
+  #   enable = true;
+  #   alsa.enable = true;
+  #   alsa.support32Bit = true;
+  #   pulse.enable = true;
+  # };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -114,7 +115,6 @@
       mullvad-vpn
       gnome-network-displays
       audacity
-      steam
       obs-studio
       soundkonverter
       tor-browser
