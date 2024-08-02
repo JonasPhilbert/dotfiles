@@ -98,7 +98,6 @@
       bitwarden
       alacritty
       vscode
-      inkscape-with-extensions
       gimp
       qbittorrent
       vlc
@@ -140,6 +139,7 @@
       ripgrep
       fzf
       gnupg # Generates keys (PGP)
+      inkscape-with-extensions # Inkscape - Would normally be a user package, but that breaks fonts?
   ];
 
   environment.sessionVariables = {
