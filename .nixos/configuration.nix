@@ -121,6 +121,7 @@
       wine
       slack
       zoom-us
+      darktable # Lightroom-esc image editing program.
     ];
   };
 
