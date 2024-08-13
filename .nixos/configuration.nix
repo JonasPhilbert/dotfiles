@@ -89,7 +89,7 @@
     isNormalUser = true;
     description = "Jonas";
     extraGroups = [ "networkmanager" "wheel" ];
-    useDefaultShell = true;
+    shell = pkgs.fish;
     packages = with pkgs; [
       rustc
       cargo
