@@ -89,7 +89,7 @@
     isNormalUser = true;
     description = "Jonas";
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.bash;
+    useDefaultShell = true;
     packages = with pkgs; [
       rustc
       cargo
