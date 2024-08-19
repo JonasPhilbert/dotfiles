@@ -142,6 +142,7 @@
       ripgrep
       fzf
       gnupg # Generates keys (PGP)
+      ffmpeg
       inkscape-with-extensions # Inkscape - Would normally be a user package, but that breaks fonts?
   ];
 
