@@ -93,7 +93,6 @@
     packages = with pkgs; [
       rustc
       cargo
-
       brave
       bitwarden
       alacritty
@@ -105,14 +104,11 @@
       libreoffice
       telegram-desktop
       prusa-slicer
-      openscad
       blender
       thunderbird
-      wine
       baobab # Disk usage analyser and visualization tool. Like windirstat.
       ventoy
       mullvad-vpn
-      gnome-network-displays
       audacity
       obs-studio
       soundkonverter
@@ -121,9 +117,9 @@
       wine
       slack
       zoom-us
-      darktable # Lightroom-esc image editing program.
       imagemagick
       kdenlive
+      inkscape-with-extensions
     ];
   };
 
@@ -143,7 +139,6 @@
       fzf
       gnupg # Generates keys (PGP)
       ffmpeg
-      inkscape-with-extensions # Inkscape - Would normally be a user package, but that breaks fonts?
   ];
 
   environment.sessionVariables = {
