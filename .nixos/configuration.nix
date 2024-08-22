@@ -119,7 +119,7 @@
       zoom-us
       imagemagick
       kdenlive
-      inkscape-with-extensions
+      inkscape
     ];
   };
 
