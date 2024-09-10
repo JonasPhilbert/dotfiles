@@ -120,6 +120,7 @@
       imagemagick
       kdenlive
       inkscape
+      rename
     ];
   };
 
