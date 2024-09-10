@@ -120,7 +120,6 @@
       imagemagick
       kdenlive
       inkscape
-      rename
     ];
   };
 
@@ -140,6 +139,7 @@
       fzf
       gnupg # Generates keys (PGP)
       ffmpeg
+      rename # Bulk rename util
   ];
 
   environment.sessionVariables = {
