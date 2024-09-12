@@ -142,6 +142,10 @@
       gnupg # Generates keys (PGP)
       ffmpeg
       rename # Bulk rename util
+      libGL # Required for android studio
+      # libpulse # Required for android studio
+      qemu # Required for android studio
+      android-tools # Required for android studio
   ];
 
   environment.sessionVariables = {
