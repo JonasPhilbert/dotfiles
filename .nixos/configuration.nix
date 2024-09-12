@@ -121,6 +121,7 @@
       kdenlive
       inkscape
       tailscale
+      android-studio
     ];
   };
 
