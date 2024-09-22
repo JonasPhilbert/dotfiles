@@ -122,7 +122,7 @@
       inkscape
       tailscale
       android-studio
-      legendary-gl
+      lutris
     ];
   };
 
