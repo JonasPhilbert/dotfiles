@@ -122,8 +122,6 @@
       inkscape
       tailscale
       android-studio
-      godot_4
-      mono
     ];
   };
 
