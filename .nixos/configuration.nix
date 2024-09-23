@@ -58,7 +58,7 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
-  # Enable sound with pipewire.
+  # Enable sound with pulseaudio.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
   hardware.pulseaudio.support32Bit = true;
@@ -143,11 +143,11 @@
       ffmpeg
       rename # Bulk rename util
       libGL # Required for android studio
-      # libpulse # Required for android studio
       qemu # Required for android studio
       android-tools # Required for android studio
   ];
 
+  # Setting some GNOME envvars to help GNOME locate some resources. Namely icons for apps.
   environment.sessionVariables = {
     XDG_CACHE_HOME  = "$HOME/.cache";
     XDG_CONFIG_HOME = "$HOME/.config";
@@ -156,7 +156,8 @@
   };
 
   # Services
-  services.thermald.enable = true; # Service to help prevent CPU overheating(?)
+  services.thermald.enable = true; # Service helps with power management and battery life (?)
+  # Keyboard remapping using Kanata (caps -> esc)
   services.kanata = {
     enable = true;
     keyboards.default = {
