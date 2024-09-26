@@ -177,4 +177,7 @@
   programs.steam.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
+
+  # Docker
+  virtualisation.docker.enable = true;
 }
