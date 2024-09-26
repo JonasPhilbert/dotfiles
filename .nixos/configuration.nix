@@ -145,6 +145,7 @@
       libGL # Required for android studio
       qemu # Required for android studio
       android-tools # Required for android studio
+      docker
   ];
 
   # Setting some GNOME envvars to help GNOME locate some resources. Namely icons for apps.
