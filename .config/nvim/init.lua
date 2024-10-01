@@ -28,6 +28,25 @@ vim.o.wrap = false -- Do not wrap overflowing lines to next line.
 vim.o.mouse = '' -- Disable mouse.
 vim.cmd('set list listchars=nbsp:€') -- Show NBSP characters as euro sign to help identify mishaps.
 vim.g.mapleader = ' ' -- Leader key is space.
+
+-- Masterschool: Util function to open current .rst file in preview server: (made by ChatGPT)
+function OpenRSTFileInBrowser()
+  -- Get the relative path of the current file
+  local filepath = vim.fn.expand('%')
+  
+  -- Remove the leading "_sources/" from the filepath
+  local relative_path = filepath:gsub('^_sources/', '')
+  
+  -- Replace the file extension from ".rst" to ".html"
+  local url_path = relative_path:gsub('%.rst$', '.html')
+  
+  -- Construct the final URL
+  local url = 'http://localhost:8000/' .. url_path
+  
+  -- Open the URL in the default web browser using netrw's BrowseX function
+  vim.fn["netrw#BrowseX"](url, 0)
+end
+vim.api.nvim_set_keymap('n', '<Leader>o', ':lua OpenRSTFileInBrowser()<CR>', { noremap = true, silent = true })
  
 -- local nore_silent = { noremap = true, silent = true }
 local nore_silent = { silent = true } -- NOTE(jpp): Testing if noremap is even needed.
