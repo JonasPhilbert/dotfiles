@@ -88,7 +88,7 @@
   users.users.jonas = {
     isNormalUser = true;
     description = "Jonas";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel"];
     shell = pkgs.fish;
     packages = with pkgs; [
       rustc
@@ -180,5 +180,8 @@
   programs.neovim.defaultEditor = true;
 
   # Docker
-  virtualisation.docker.enable = true;
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 }
