@@ -122,6 +122,7 @@
       inkscape
       tailscale
       android-studio
+      gopls
     ];
   };
 
