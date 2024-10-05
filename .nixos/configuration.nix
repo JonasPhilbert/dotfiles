@@ -147,6 +147,7 @@
       android-tools # Required for android studio
       docker
       which
+      go
   ];
 
   # Setting some GNOME envvars to help GNOME locate some resources. Namely icons for apps.
