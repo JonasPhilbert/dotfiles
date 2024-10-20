@@ -11,16 +11,9 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Define your hostname.
   networking.hostName = "nixos";
-
-  # Enable networking
   networking.networkmanager.enable = true;
-
-  # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
-
-  # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
   i18n.extraLocaleSettings = {
     LC_ADDRESS = "da_DK.UTF-8";
@@ -33,6 +26,7 @@
     LC_TELEPHONE = "da_DK.UTF-8";
     LC_TIME = "da_DK.UTF-8";
   };
+  console.keyMap = "dk-latin1";
 
   # Enable the GNOME Desktop Environment.
   services.xserver = {
@@ -52,12 +46,6 @@
     };
   };
 
-  # Configure console keymap
-  console.keyMap = "dk-latin1";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
   # Enable sound with pulseaudio.
   sound.enable = true;
   hardware.pulseaudio.enable = true;
@@ -70,9 +58,6 @@
   #   pulse.enable = true;
   # };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -80,6 +65,9 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "23.11"; # Did you read the comment?
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
   
   # Enable flakes support.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -174,6 +162,7 @@
   services.mullvad-vpn.enable = true;
   services.tailscale.enable = true;
   services.colord.enable = true; # Enable color service, for night light.
+  services.printing.enable = true; # Enable CUPS to print documents.
 
   # Options for programs.
   programs.fish.enable = true;
