@@ -161,8 +161,7 @@
 
   # Services
   services.thermald.enable = true; # Service helps with power management and battery life (?)
-  # Keyboard remapping using Kanata (caps -> esc)
-  services.kanata = {
+  services.kanata = { # Keyboard remapping using Kanata (caps -> esc)
     enable = true;
     keyboards.default = {
       config = ''
@@ -174,6 +173,7 @@
   };
   services.mullvad-vpn.enable = true;
   services.tailscale.enable = true;
+  services.colord.enable = true; # Enable color service, for night light.
 
   # Options for programs.
   programs.fish.enable = true;
