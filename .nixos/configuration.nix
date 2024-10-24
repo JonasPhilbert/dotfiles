@@ -82,6 +82,7 @@
       rustc
       cargo
       brave
+      firefox
       bitwarden
       alacritty
       vscode
