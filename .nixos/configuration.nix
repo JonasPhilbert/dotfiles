@@ -106,7 +106,6 @@
       kleopatra # Certificate (& PGP key) manager GUI.
       wine
       slack
-      zoom-us
       imagemagick
       kdenlive
       inkscape
