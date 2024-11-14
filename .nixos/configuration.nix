@@ -164,6 +164,7 @@
   services.tailscale.enable = true;
   services.colord.enable = true; # Enable color service, for night light.
   services.printing.enable = true; # Enable CUPS to print documents.
+  services.flatpak.enable = true;
 
   # Options for programs.
   programs.fish.enable = true;
