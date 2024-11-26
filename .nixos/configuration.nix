@@ -169,7 +169,6 @@
 
   # Options for programs.
   programs.fish.enable = true;
-  programs.steam.enable = true;
   programs.neovim.enable = true;
   programs.neovim.defaultEditor = true;
 
