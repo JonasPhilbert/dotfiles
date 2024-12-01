@@ -69,6 +69,11 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+# Everyone hates electron.
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
   
   # Enable flakes support.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -82,11 +87,11 @@
     packages = with pkgs; [
       rustc
       cargo
-      brave
       firefox
       bitwarden
       alacritty
       vscode
+      obsidian
       gimp
       qbittorrent
       vlc
