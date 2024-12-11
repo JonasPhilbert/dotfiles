@@ -88,6 +88,7 @@
       rustc
       cargo
       firefox
+      httrack
       google-chrome
       bitwarden
       alacritty
