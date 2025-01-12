@@ -93,6 +93,7 @@
       bitwarden
       alacritty
       vscode
+      arduino
       obsidian
       gimp
       qbittorrent
