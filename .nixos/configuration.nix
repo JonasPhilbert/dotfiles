@@ -120,6 +120,7 @@
       tailscale
       android-studio
       gopls
+      reaper
     ];
   };
 
