@@ -47,15 +47,17 @@
     };
   };
 
-  # Enable sound with pipewire.
   sound.enable = true;
+  # rtkit is optional but recommended
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
-    enable = true;
+    enable = true; # if not already enabled
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
+    # If you want to use JACK applications, uncomment this
+    #jack.enable = true;
   };
 
   # This value determines the NixOS release from which the default
@@ -125,6 +127,7 @@
 
   # List packages installed in system profile. To search, run:
   environment.systemPackages = with pkgs; [
+      alsa-utils
       neovim
       wget
       git
