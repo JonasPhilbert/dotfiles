@@ -82,7 +82,7 @@
   users.users.jonas = {
     isNormalUser = true;
     description = "Jonas";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "audio" ];
     shell = pkgs.fish;
     packages = with pkgs; [
       rustc
